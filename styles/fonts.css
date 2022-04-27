@@ -1,0 +1,48 @@
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.roboto-thin {
+    font-weight: 100;
+}
+.roboto-light {
+    font-weight: 300;
+}
+.roboto-medium {
+    font-weight: 500;
+}
+.roboto-bold {
+    font-weight: 700;
+}
+
+.roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+.roboto-mono-thin {
+    font-weight: 100;
+}
+.roboto-mono-light {
+    font-weight: 300;
+}
+
+.roboto-slab {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
+.roboto-slab-extraLight {
+    font-weight: 200;
+}
+.roboto-slab-bold {
+    font-weight: 700;
+}
+
+.rubik {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+.rubik-mono-one {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 400;
+}

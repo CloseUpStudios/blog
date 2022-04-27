@@ -6,26 +6,19 @@ import SpotlightSection from '../components/sections/SpotlightSection';
 import Card from '../components/cards/Card';
 import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 function Home({ data }) {
   return (
     <div id="root">
       <Header/>
+      <div id="colorOverlay"></div>
       <main>
         <header>
             <div>
-                <h1>Closed[in]</h1>
+                <h1 className='rubik-mono-one'>Closed[in]</h1>
             </div>
-                <i id="navbarOpener" onClick="openNav();"  className="fas fa-bars pointer"></i>
-
-                <div id="sidebar" className="sidenav">
-            
-                    <a onClick="closeNav();"><i className="fa-solid fa-circle-xmark pointer"></i></a>
-            
-                    <Link href="/" className="btn btn_primary"><a id="homeAnchor" >Home</a></Link>
-                    <Link href="/" className="btn btn_primary disabled"><a id="newsAnchor">News</a></Link>
-            
-                </div>
+                <Navbar/>
 
         </header>
 
@@ -41,8 +34,13 @@ function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:30005/blog/request/0/all/all/all/all/all");
-  const data = await res.json();
+  let data = [];
+  try {
+    const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
+      data = await res.json();
+  } catch(e) {
+    console.error("Could not retrieve data in index.js. Error:", e);
+  }
 
   return { props: { data }};
 }

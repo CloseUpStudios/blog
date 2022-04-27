@@ -16,9 +16,9 @@
 }
 
 .btn_primary{
-    background-color: var(--bright_purple);
-    color: var(--dark_purple);
-    box-shadow: 0 0 15px var(--bright_purple);
+    background-color: var(--lightestOrange);
+    color: var(--realDark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all .25s;
 }
 

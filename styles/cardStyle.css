@@ -3,13 +3,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem 2.5rem;
     width: 13rem !important;
     height: 20rem;
     color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     border-radius: 33px;
-    background-image: linear-gradient( #000000ce, 80%, rgba(0, 0, 0, 0.249)),
+    background-image: linear-gradient( #000000ce, 50%, rgba(0, 0, 0, 0.249)),
     url('https://images.unsplash.com/photo-1648765825798-57d76ecd38e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
     background-position: center center;
     background-size: cover;
@@ -38,8 +38,7 @@
 }
 
 .spotlightTitle {
-    font-size: 20pt;
-    font-weight: bold;
+    font-size: 15pt;
     word-wrap: break-word;
 }
 
@@ -53,9 +52,11 @@
 }
 
 .spotlightDate {
-    font-size: 12pt;
-    font-weight: lighter;
+    font-size: 10pt;
     margin-bottom: .25em;
+    color: #B6B6B6;
+    background-color: #00000046;
+    padding: .25em .5em;
 }
 
 .spotlightAuthor {
@@ -68,20 +69,19 @@
     margin-right: .5em;
     background-color: aliceblue;
     border-radius: 100%;
-    width: 24px;
-    height: 24px;
+    width: 1em;
+    height: 1em;
 }
 
 .spotlightAuthorName {
-    font-size: 16pt;
-    font-weight: lighter;
+    font-size: 14pt;
 }
 
 
 
 .article_card {
     background-color: var(--vdark_purple);
-    border-radius: 33px;
+    border-radius: 11px;
     height: 20rem;
     width: 90%;
     display: flex;
@@ -91,9 +91,12 @@
     cursor: pointer;
 }
 
+
 .article_card .article_image {
     background-color: rgb(85, 44, 44);
-    border-radius: 33px 33px 0 0;
+    border-radius: 11px 11px 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100%;
 }
@@ -105,20 +108,20 @@
 
 .article_card .content_header {
     width: 100%;
-    height: 25%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
 }
 
 .article_card .meta {
     font-size: 12pt;
-    font-weight: 100;
+    color: #B6B6B6;
 }
 
 .article_card .title {
-    font-size: 16pt;
-    font-weight: 500;
+    color: #FFF1DA;
+    font-size: 23pt;
+    height: fit-content;
 }
 
 .article_card .tags {
@@ -129,7 +132,7 @@
 }
 
 .article_card .tag {
-    padding: .25rem 1rem;
+    padding: .1rem 1rem;
     color: var(--material_dark);
     background-color: var(--lightestOrange);
     display: flex;
@@ -150,6 +153,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre-line;
-    font-size: 1em;
-    font-weight: 300;
+    font-size: 13pt;
 }

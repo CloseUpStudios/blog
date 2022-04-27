@@ -19,13 +19,15 @@
     --textGrey: #BEBEBE;
     --lightYellow: #FFE082;
     --cardBG: #303030;
+    --realDark: #0A060D;
 }
 
-body, html {
+body, html, #__next {
     margin: 0;
     overflow-x: hidden;
     background-color: var(--bg_purple);
     color: white;
+    min-height: 100vh;
 }
 
 header {
@@ -69,19 +71,25 @@ header h1 {
 
 #content_wrapper {
     margin-top: 5rem;
+    min-height: 100vh;
 }
 
 .smallHeader {
-    color: var(--lightestOrange);
+    font-size: 18pt;
+    color: var(--realDark);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
+}
+
+.lightestOrange {
+    color: var(--lightestOrange);
 }
 
 
 /* SPOTLIGHT
 */
 #spotlight {
-    background-color: var(--bright_purple);
+    background-color: var(--lightestOrange);
     width: 100%;
     height: 33rem;
     display: flex;
@@ -125,6 +133,23 @@ header h1 {
     margin-left: 5%;
 }
 
-#filter {
-    margin: 1rem;
+#latest .searchIcon {
+    color: var(--lightestOrange);
+    font-size: 18pt;
+}
+
+#articleView .contentWrapper {
+    margin: 0;
+}
+
+#articleView .article_image {
+    width: 100%;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 11px 11px;
+}
+
+#articleView #navbarOpener {
+    margin-top: 3rem;
 }
