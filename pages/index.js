@@ -35,7 +35,7 @@ function Home({ data }) {
 }
 
 const fetcher = (url, options) => fetch(url, options).then((res) => res.json());
-const API = "https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
+const API = "https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
 const options = {
   "method": 'GET',
   "Content-Type": "application/json"
