@@ -23,9 +23,6 @@ function Home({ data }) {
         </header>
         {console.log(data)}
         <div id="content_wrapper">
-            <SpotlightSection data={data}></SpotlightSection>
-
-            <CardSection data={data}></CardSection>
         </div>
           
       </main>
