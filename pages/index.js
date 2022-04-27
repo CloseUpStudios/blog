@@ -21,7 +21,7 @@ function Home({ data }) {
                 <Navbar/>
 
         </header>
-
+        {console.log(data)}
         <div id="content_wrapper">
             <SpotlightSection data={data}></SpotlightSection>
 
@@ -40,8 +40,9 @@ export async function getServerSideProps() {
     "Content-Type": "application/json"
   }
   const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all", options);
+
   console.log(res);
-  data = await res.json();
+  data = res;
   return { props: { data }};
 }
 
