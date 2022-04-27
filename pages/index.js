@@ -11,7 +11,7 @@ import Navbar from '../components/Navbar';
 function Home({ data }) {
   return (
     <div id="root">
-      <Header/>
+      <Header title="Home" />
       <div id="colorOverlay"></div>
       <main>
         <header>
@@ -35,13 +35,8 @@ function Home({ data }) {
 
 export async function getServerSideProps() {
   let data = [];
-  try {
-    const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
-      data = await res.json();
-  } catch(e) {
-    console.error("Could not retrieve data in index.js. Error:", e);
-  }
-
+  const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
+  data = await res.json();
   return { props: { data }};
 }
 

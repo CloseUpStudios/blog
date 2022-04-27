@@ -14,7 +14,7 @@ const ArticleView = ({ article, data }) => {
     } 
     return (
         <div id="articleView">
-            <Header/>
+            <Header title={article.content.title} />
             <div id="colorOverlay"></div>
             <Navbar />
             <div id='content_wrapper' style={{marginTop:0}}> 
@@ -42,26 +42,19 @@ export const getServerSideProps = async (context) => {
   // single article for article view
   const id = context.params.id;
   let article = [id];
-  try {
-    const res = await fetch(`https://cr4yfish.digital:8443/blog/request/${id}`);
-      let temp = await res.json();
-      if(temp.length != 0) {
-        article = temp;
-      }
-  } catch(e) {
-    console.error("Could not retrieve article data in index.js. Error:", e);
+  let res = await fetch(`https://cr4yfish.digital:8443/blog/request/${id}`);
+  let temp = await res.json();
+  if(temp.length != 0) {
+    article = temp;
   }
 
   // all articles for spotlight view
   let data = [];
-  try {
-    const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
-      data = await res.json();
-  } catch(e) {
-    console.error("Could not retrieve data in index.js. Error:", e);
-  }
-  
-    return { props: { article, data }};
+
+  res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
+  data = await res.json();
+
+  return { props: { article, data }};
 }
 
 export default ArticleView;
