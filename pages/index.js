@@ -35,7 +35,11 @@ function Home({ data }) {
 
 export async function getServerSideProps() {
   let data = [];
-  const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all");
+  const options = {
+    "method": 'GET',
+    "Content-Type": "application/json"
+  }
+  const res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all", options);
   console.log(res);
   data = await res.json();
   return { props: { data }};
