@@ -7,6 +7,7 @@ import Card from '../components/cards/Card';
 import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
+import useSWR, { SWRConfig } from "swr";
 
 function Home({ data }) {
   return (
@@ -19,10 +20,13 @@ function Home({ data }) {
                 <h1 className='rubik-mono-one'>Closed[in]</h1>
             </div>
                 <Navbar/>
-
+             
         </header>
         {console.log(data)}
         <div id="content_wrapper">
+        <SpotlightSection data={data}></SpotlightSection>
+
+        <CardSection data={data}></CardSection>
         </div>
           
       </main>
@@ -30,14 +34,15 @@ function Home({ data }) {
   )
 }
 
+const fetcher = (url, options) => fetch(url, options).then((res) => res.json());
+const API = "https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
+const options = {
+  "method": 'GET',
+  "Content-Type": "application/json"
+}
+
 export async function getServerSideProps() {
-  let data = [];
-  const options = {
-    "method": 'GET',
-    "Content-Type": "application/json"
-  }
-  const res = fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all", options);
-  data = res;
+  const data = await fetcher(API, options);
   return { props: { data }};
 }
 
