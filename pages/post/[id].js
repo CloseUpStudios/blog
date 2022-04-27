@@ -40,13 +40,18 @@ const ArticleView = ({ article, data }) => {
 
 export const getServerSideProps = async (context) => {
   // single article for article view
+  let res;
+  let article;
   const id = context.params.id;
-  let article = [id];
-  let res = await fetch(`https://cr4yfish.digital:8443/blog/request/${id}`);
-  let temp = await res.json();
-  if(temp.length != 0) {
-    article = temp;
+  if(id != undefined) {
+    article = [id];
+    res = await fetch(`https://cr4yfish.digital:8443/blog/request/${id}`);
+    let temp = await res.json();
+    if(temp.length != 0) {
+      article = temp;
+    }
   }
+
 
   // all articles for spotlight view
   let data = [];
