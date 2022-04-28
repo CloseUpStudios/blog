@@ -24,9 +24,9 @@ function Home({ data}) {
              
         </header>
         <div id="content_wrapper">  
+          <SpotlightSection data={data}></SpotlightSection>
+          <CardSection data={data}></CardSection>
         </div>
-        <SpotlightSection data={data}></SpotlightSection>
-        <CardSection data={data}></CardSection>
       </main>
     </div>
   )
