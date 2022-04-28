@@ -50,7 +50,7 @@ export const getServerSideProps = async (context) => {
   if(id != undefined) {
     article = [id];
 
-    res = await fetch(`https://cr4yfish.digital:8443/blog/request/${id}`, options);
+    res = await fetch(`https://www.cr4yfish.digital:8443/blog/request/${id}`, options);
     let temp = await res.json();
     if(temp.length != 0) {
       article = temp;
@@ -61,7 +61,7 @@ export const getServerSideProps = async (context) => {
   // all articles for spotlight view
   let data = [];
 
-  res = await fetch("https://cr4yfish.digital:8443/blog/request/0/all/all/all/all/all", options);
+  res = await fetch("https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all", options);
   data = await res.json();
 
   return { props: { article, data }};
