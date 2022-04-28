@@ -25,9 +25,7 @@ function Home({ data, error = false }) {
         </header>
         {console.log(data, error)}
         <div id="content_wrapper">
-        <SpotlightSection data={data}></SpotlightSection>
-
-        <CardSection data={data}></CardSection>
+        {data}
         </div>
           
       </main>
