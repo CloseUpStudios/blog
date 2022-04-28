@@ -36,6 +36,7 @@ function Home({ data }) {
 }
 
 const fetcher = (url, options) => fetch(url, options).then((res) => res.json());
+
 const API = "https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
 const options = {
   "method": 'GET',
@@ -43,8 +44,14 @@ const options = {
 }
 
 export async function getServerSideProps() {
-  const data = await fetcher(API, options);
-  return { props: { data }};
+  try {
+    const data = await fetcher(API, options);
+    return { props: { data }};
+  } catch (e) {
+    return {
+      error: e
+    }
+  }
 }
 
 export default Home;
