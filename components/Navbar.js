@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NavbarItem from './NavbarItem'
+import { FaBars, FaTimesCircle } from "react-icons/fa";
 
 export default function Navbar() {
 
@@ -32,11 +33,12 @@ export default function Navbar() {
     }
     return (
         <>
-            <i id="navbarOpener" onClick={openNav}  className="fas fa-bars pointer"></i>
-
+            <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer"></FaBars>
             <div id="sidebar" className="sidenav">
-                <a onClick={closeNav}><i className="fa-solid fa-circle-xmark pointer"></i></a>
-
+                <a onClick={closeNav}>
+                    <FaTimesCircle className="fa-solid fa-times-circle pointer"></FaTimesCircle>
+                </a>
+                
                 <NavbarItem name="Home" href="/" disabled={false} />
                 <NavbarItem name="IT"  disabled={true} />
                 <NavbarItem name="Film" disabled={true} />
