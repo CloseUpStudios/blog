@@ -5,11 +5,6 @@ import 'swiper/css/scrollbar';
 import Spotlight from '../cards/SpotlightCard';
 
 export default function SpotlightSection({data, className = ""}) {
-    if(data == "error") {
-        return (
-            <div>{data}</div>
-        )
-    }
     return (
         <section className={className} id="spotlight">
             <h2 className="smallHeader roboto" style={{fontSize:"18pt"}}>Spotlight</h2>

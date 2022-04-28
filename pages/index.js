@@ -9,7 +9,7 @@ import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import useSWR from "swr";
 
-function Home({ data, error = false }) {
+function Home({ data}) {
 
   return (
     <div id="root">
@@ -23,17 +23,16 @@ function Home({ data, error = false }) {
                 <Navbar/>
              
         </header>
-        {console.log(data, error)}
-        <div id="content_wrapper">
-        {data}
+        <div id="content_wrapper">  
         </div>
-          
+        <SpotlightSection data={data}></SpotlightSection>
+        <CardSection data={data}></CardSection>
       </main>
     </div>
   )
 }
 
-const fetcher = (url, options) => fetch(url, options);
+const fetcher = (url, options) => fetch(url, options).then(res => res.json());
 
 const API = "https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
 const options = {
@@ -42,18 +41,8 @@ const options = {
 }
 
 export async function getServerSideProps() {
-  try {
-    console.log("Sending API req to ", API, "with", options);
-    let data = await fetcher(API, options);
-    console.log("Got", data);
-    data = await data.text();
-    console.log("in json:", data);
-    return { props: { data }};
-  } catch (error) {
-    const data = "error";
-    console.error(data, error);
-    return { props: { data, error }};
-  }
+  const data = await fetcher(API, options);
+  return { props: { data }};
 }
 
 export default Home;

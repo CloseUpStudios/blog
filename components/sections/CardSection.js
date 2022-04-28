@@ -2,11 +2,6 @@ import Card from "../cards/Card"
 import { FaSearch } from "react-icons/fa";
 
 export default function CardSection({data}) {
-    if(data == "error") {
-        return (
-            <div>{data}</div>
-        )
-    }
     return (
         <div id="latest" >
             <div style={{display: "flex", flexDirection:"row", alignItems: "center", justifyContent:"space-between"}}>
