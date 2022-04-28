@@ -46,7 +46,7 @@ const options = {
 export async function getServerSideProps() {
   try {
     console.log("Sending API req to ", API, "with", options);
-    const data = await fetcher(API, options);
+    let data = await fetcher(API, options);
     console.log("Got", data);
     data = await data.json();
     console.log("in json:", data);
