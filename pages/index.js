@@ -35,7 +35,7 @@ function Home({ data, error = false }) {
   )
 }
 
-const fetcher = (url, options) => fetch(url, options).then((res) => res.json());
+const fetcher = (url, options) => fetch(url, options);
 
 const API = "https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
 const options = {
@@ -45,11 +45,15 @@ const options = {
 
 export async function getServerSideProps() {
   try {
+    console.log("Sending API req to ", API, "with", options);
     const data = await fetcher(API, options);
+    console.log("Got", data);
+    data = await data.json();
+    console.log("in json:", data);
     return { props: { data }};
   } catch (error) {
+    console.error(data, error);
     const data = "error";
-    console.error(error);
     return { props: { data, error }};
   }
 }
