@@ -52,8 +52,8 @@ export async function getServerSideProps() {
     console.log("in json:", data);
     return { props: { data }};
   } catch (error) {
-    console.error(data, error);
     const data = "error";
+    console.error(data, error);
     return { props: { data, error }};
   }
 }
