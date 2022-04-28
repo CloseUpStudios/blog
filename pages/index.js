@@ -48,9 +48,8 @@ export async function getServerSideProps() {
     const data = await fetcher(API, options);
     return { props: { data }};
   } catch (e) {
-    return {
-      error: e
-    }
+    const data = "error";
+    return { props: { data }};
   }
 }
 
