@@ -9,7 +9,7 @@ import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import useSWR from "swr";
 
-function Home({ data }) {
+function Home({ data, error = false }) {
 
   return (
     <div id="root">
@@ -23,7 +23,7 @@ function Home({ data }) {
                 <Navbar/>
              
         </header>
-        {console.log(data)}
+        {console.log(data, error)}
         <div id="content_wrapper">
         <SpotlightSection data={data}></SpotlightSection>
 
@@ -47,9 +47,10 @@ export async function getServerSideProps() {
   try {
     const data = await fetcher(API, options);
     return { props: { data }};
-  } catch (e) {
+  } catch (error) {
     const data = "error";
-    return { props: { data }};
+    console.error(error);
+    return { props: { data, error }};
   }
 }
 
