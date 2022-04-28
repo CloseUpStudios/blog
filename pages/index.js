@@ -48,7 +48,7 @@ export async function getServerSideProps() {
     console.log("Sending API req to ", API, "with", options);
     let data = await fetcher(API, options);
     console.log("Got", data);
-    data = await data.json();
+    data = await data.text();
     console.log("in json:", data);
     return { props: { data }};
   } catch (error) {
