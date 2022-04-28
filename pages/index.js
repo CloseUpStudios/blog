@@ -7,9 +7,10 @@ import Card from '../components/cards/Card';
 import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
-import useSWR, { SWRConfig } from "swr";
+import useSWR from "swr";
 
 function Home({ data }) {
+
   return (
     <div id="root">
       <Header title="Home" />
