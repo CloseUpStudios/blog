@@ -10,7 +10,6 @@ import Navbar from '../components/Navbar';
 import useSWR from "swr";
 
 function Home({ data}) {
-
   return (
     <div id="root">
       <Header title="Home" />
@@ -24,6 +23,7 @@ function Home({ data}) {
              
         </header>
         <div id="content_wrapper">  
+        {console.log(data)}
           <SpotlightSection data={data}></SpotlightSection>
           <CardSection data={data}></CardSection>
         </div>
@@ -32,16 +32,21 @@ function Home({ data}) {
   )
 }
 
-const fetcher = (url, options) => fetch(url, options).then(res => res.json());
+// sanity stuff
+import { createClient } from 'next-sanity'
+const client = createClient({
+  projectId: "g2ejdxre",
+  dataset: "production",
+  apiVersion: "2022-04-29",
+  useCdn: false
+});
 
-const API = "https://www.cr4yfish.digital:8443/blog/request/0/all/all/all/all/all";
-const options = {
-  "method": 'GET',
-  "Content-Type": "application/json"
-}
+export async function getStaticProps() {
+  const data = await client.fetch(`*[_type == "post"]{
+    ...,
+    author->
+  }`) 
 
-export async function getServerSideProps() {
-  const data = await fetcher(API, options);
   return { props: { data }};
 }
 
