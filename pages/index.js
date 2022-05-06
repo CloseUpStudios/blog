@@ -44,7 +44,7 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: false
+  useCdn: true
 });
 
 export async function getStaticProps() {

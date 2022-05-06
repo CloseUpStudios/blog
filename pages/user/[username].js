@@ -38,17 +38,17 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: false
+  useCdn: true
 });
 
 export const getServerSideProps = async (context) => {
   let user = false;
 
   // single article for article view
-  const username = context.params.username;
+  const usernameSlug = context.params.username;
     // get data from sanity
       
-    user = await client.fetch(`*[_type == "author" && name == "${username}" ] {
+    user = await client.fetch(`*[_type == "author" && slug.current == "${usernameSlug}" ] {
       ...,
       _id,      
       "posts": *[_type == "post" && author._ref == ^._id] {
