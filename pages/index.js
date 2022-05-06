@@ -10,7 +10,7 @@ import Navbar from '../components/Navbar';
 import useSWR from "swr";
 import { useAmp } from "next/amp";
 
-const config = { amp: "hybrid "}
+const config = { amp: "true "}
 
 function Home({ data}) {
   const loadAmp = useAmp();
