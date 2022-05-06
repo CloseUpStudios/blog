@@ -1,17 +1,18 @@
 import Link from 'next/link';
 import BackgroundImage from './BackgroundImage';
+import Tags from "./Tags";
+import Meta from "./Meta";
 
-export default function Spotlight({article}) {
+export default function Spotlight({article, forward=true}) {
     return (
-        <BackgroundImage className="spotlightSlide" image={article.mainImage} spotlight={true} slug={article.slug.current}>
-            <span className="spotlightTitle rubik">{article.title}</span>
-            <div className="spotlightMeta">
-                <span className="spotlightDate roboto" style={{fontWeight:"300", fontStyle:"italic"}}>{new Date(article.publishedAt).toDateString()}</span>
-                <div className="spotlightAuthor">
-                    <span className="spotlightAuthorImage"></span>
-                    <span className="spotlightAuthorName roboto" style={{fontWeight:"300"}}>{article.author.name}</span>
-                </div>
-            </div>  
+        <BackgroundImage className="spotlightSlide" image={article.mainImage} spotlight={true} slug={article.slug.current} forward={forward}>
+            <div>
+                <span className="spotlightTitle rubik">{article.title}</span>
+                <Tags tags={article.tags} full={false} />
+            </div>
+            <div>
+                <Meta article={article} />
+            </div>
         </BackgroundImage>  
     )
 }

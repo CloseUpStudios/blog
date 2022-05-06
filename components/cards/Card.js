@@ -1,26 +1,21 @@
 import Link from 'next/link'
 import BackgroundImage from './BackgroundImage';
+import Tags from "./Tags";
+import Meta from "./Meta";
 
 export default function Card({article}) {
     return (
-        <Link href={`/post/${article.slug.current}`} passHref>
-            <div className="article_card">
-
-                <BackgroundImage image={article.mainImage} />           
-                <div className="article_content">
-                    <div className="content_header">
-                        <span className="meta roboto roboto-light">{article.author.name} <span style={{fontStyle:"italic"}}>{new Date(article.publishedAt).toDateString()}</span></span>
-                        <span className="title roboto-slab roboto-slab-bold">{article.title}</span>
-                    </div>
-                <div className='tags'>
-                    {article.tags.map((tag, index) => (
-                        <div key={index} className="tag roboto roboto-bold">{tag}</div>
-                    ))}
+        <Link href={`/post/${article.slug.current}?forward=true`} passHref>
+            <BackgroundImage className="spotlightSlide articleCard" image={article.mainImage} spotlight={true} slug={article.slug.current} >
+                <div>
+                    <span className="spotlightTitle articleCardTitle rubik" >{article.title}</span>
+                    <Tags tags={article.tags} full={false} />
+                    <div className="subtitle roboto roboto-light">{article.tldr}</div>
                 </div>
-                    
-                <div className="subtitle roboto roboto-light">{article.subtitle}</div>
+                <div>
+                    <Meta article={article} />
                 </div>
-            </div>
+            </BackgroundImage>
         </Link>
     )
 }

@@ -8,22 +8,28 @@ import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import useSWR from "swr";
+import { useAmp } from "next/amp";
+
+const config = { amp: "hybrid "}
 
 function Home({ data}) {
+  const loadAmp = useAmp();
+
+  const saveDataInLocalStorage = (data) => {
+    if(typeof window !== 'undefined') {
+      localStorage.setItem('data', JSON.stringify(data))
+    }
+  }
+
   return (
     <div id="root">
+    {saveDataInLocalStorage(data)}
       <Header title="Home" />
-      <div id="colorOverlay"></div>
+
+      <Navbar/>
       <main>
-        <header>
-            <div>
-                <h1 className='rubik-mono-one'>Closed[in]</h1>
-            </div>
-                <Navbar/>
-             
-        </header>
+        
         <div id="content_wrapper">  
-        {console.log(data)}
           <SpotlightSection data={data}></SpotlightSection>
           <CardSection data={data}></CardSection>
         </div>

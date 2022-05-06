@@ -14,18 +14,11 @@ const builder = imageUrlBuilder(SanityClient);
 builder.dataset("production"); builder.projectId("g2ejdxre")
 
 
-export default function backgroundImage({ image, className="article_image", children, spotlight, slug, forward }) {
+export default function UserImage({ image, username }) {
     let imageUrl = builder.image(image.asset._ref)
-
-    if(spotlight) {
-        imageUrl = `linear-gradient( rgba(0, 0, 0, 0.749), 50%, rgba(0, 0, 0, 0.80)), url('${imageUrl}')`;
-    } else {
         imageUrl = `url('${imageUrl}')`;
-    }
     
     return (
-        <Link href={`/post/${slug}?forward=${forward}`} passHref={true}>
-            <div className={className} style={{backgroundImage:`${imageUrl}`}}>{children}</div>
-        </Link>
+        <div className="spotlightAuthorImage" style={{backgroundImage:`${imageUrl}`}}></div>
     )
 }

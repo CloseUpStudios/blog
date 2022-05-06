@@ -1,12 +1,16 @@
 .sidenav {
-    height: 100%;
-    width: 0;
     position: fixed;
-    z-index: 12;
-    top: 0;
+    z-index: 23;
     right: 0;
-    background-color: var(--vdark_purple);
-    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.061);
+    height: 100%;
+    top: 0;
+    width: 0;
+    background: rgb(247,171,60);
+    background: -moz-linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
+    background: linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7ab3c",endColorstr="#ffc877",GradientType=1);
+    box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.196);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -16,19 +20,55 @@
     justify-content: flex-start;
 }
 
+.navbar {
+    top: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 12;
+    width: 100%;
+    height: 5rem;
+    backdrop-filter: blur(3px);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.navbar h1 {
+    margin: 0;
+    margin-left: 2rem;
+    font-size: 18pt;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar h1 {
+        display: none;
+    }
+}
+
 .sidenav a {
     width: 60%;
 }
 
 .sidenav a:first-child {
-    color: var(--bright_purple) !important;
+    color: white !important;
     width: 85%;
-    font-size: 18pt;
+    font-size: 23pt;
     cursor: pointer;
+    transition: transform .1s;
 }
 
-.sidenav a:first-child:hover {
-    text-shadow: 0 0 15px  var(--nice_purple);
+.sidenav a:first-child svg {
+    transition: all 1s;
+}
+
+.sidenav a:first-child svg:hover {
+    transform: rotate(-250deg);
+}
+
+.sidenav .disabled {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.037);
 }
 
 #navbarOpener {
@@ -38,10 +78,11 @@
     right: 2rem;
     font-size: 2rem;
     color: white;
-    transition: opacity 0.5s;
+    transition: all 0.5s;
     cursor: pointer;
 }
 
 #navbarOpener:hover {
-    color: var(--nice_purple);
+    color: white;
+    transform: skew(-5deg, -5deg);
 }

@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 export default function CardSection({data}) {
     return (
         <div id="latest" >
-            <div style={{display: "flex", flexDirection:"row", alignItems: "center", justifyContent:"space-between"}}>
+            <div style={{display: "flex", width:"100%", flexDirection:"row", flexWrap:"wrap", alignItems: "space-between", justifyContent:"space-between"}}>
                 <h2 className="smallHeader lightestOrange">Latest</h2>
 
                 <FaSearch className="searchIcon" />
@@ -15,7 +15,6 @@ export default function CardSection({data}) {
                     </div>
                 </div>
             </div>
-
 
             <div id="latest_articles">
                 {data.map(article => (

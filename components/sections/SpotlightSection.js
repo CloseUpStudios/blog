@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import Spotlight from '../cards/SpotlightCard';
 
-export default function SpotlightSection({data, className = ""}) {
+export default function SpotlightSection({data, className = "", forward = true}) {
     return (
         <section className={className} id="spotlight">
             <h2 className="smallHeader roboto" style={{fontSize:"18pt"}}>Spotlight</h2>
@@ -31,7 +31,7 @@ export default function SpotlightSection({data, className = ""}) {
                 style={{width:"35rem"}}>
                 <div className="swiper-wrapper">
                 {data.map(article => (
-                    <SwiperSlide key={article._id}><Spotlight article={article}></Spotlight></SwiperSlide>
+                    <SwiperSlide key={article._id}><Spotlight article={article} forward={forward}></Spotlight></SwiperSlide>
                 ))}
                 </div>
                 <div className="swiper-scrollbar"></div>

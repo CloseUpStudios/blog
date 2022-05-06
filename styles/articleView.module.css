@@ -1,6 +1,9 @@
 .articleWrapper {
     margin-top: 2rem;
     padding: 1rem;
+    min-width: 75%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .meta {
@@ -19,8 +22,8 @@
 }
 
 .title {
-    font-size: 25pt;
-    color: #FFF1DA;
+    font-size: 27pt;
+    color: white;
     margin-bottom: .5rem;
 }
 
@@ -54,10 +57,18 @@
 }
 
 .content {
-    font-size: 15pt;
+    display: flex;
+    font-size: 19pt;
     hyphens: auto;
-    text-align: justify;
     word-wrap: break-word;
     padding: 0 1rem;
+    justify-content: center;
     margin-bottom: 3rem;
+    text-align: justify;
+}
+
+@media screen and (max-width:786px) {
+    .content {
+        font-size: 15pt;
+    }
 }

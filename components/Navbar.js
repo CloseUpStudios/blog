@@ -18,8 +18,7 @@ export default function Navbar() {
         document.getElementById("navbarOpener").style.opacity = "0";
         document.getElementById("colorOverlay").style.display = "block";
         
-        
-        localStorage.setItem("navbarHasBeenOpened", "true");
+        document.getElementById("colorOverlay").style.backdropFilter = "blur(1px)";
         document.getElementById("colorOverlay").style.opacity = "1";
       }
       
@@ -27,16 +26,21 @@ export default function Navbar() {
         document.getElementById("sidebar").style.width = "0";
         document.getElementById("content_wrapper").style.marginRight = "0";
         document.getElementById("navbarOpener").style.opacity = "1";
+        document.getElementById("colorOverlay").style.backdropFilter = "blur(0px)";
         document.getElementById("colorOverlay").style.opacity = "0";
         await sleep(250);
         document.getElementById("colorOverlay").style.display = "none";
     }
     return (
         <>
-            <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer"></FaBars>
+            <div onClick={closeNav} id="colorOverlay"></div>
+            <div className='navbar'>
+                <h1 className='rubik-mono-one'>Closed[in]</h1>
+                <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer" />
+            </div>
             <div id="sidebar" className="sidenav">
                 <a onClick={closeNav}>
-                    <FaTimesCircle className="fa-solid fa-times-circle pointer"></FaTimesCircle>
+                    <FaTimesCircle className="fa-solid fa-times-circle pointer" />
                 </a>
                 
                 <NavbarItem name="Home" href="/" disabled={false} />
