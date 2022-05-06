@@ -1,6 +1,6 @@
 .roboto {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-family: 'Roboto Flex', sans-serif;
+    font-optical-sizing: auto;
 }
 .roboto-thin {
     font-weight: 100;
@@ -26,23 +26,12 @@
     font-weight: 300;
 }
 
-.roboto-slab {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 500;
-}
-.roboto-slab-extraLight {
-    font-weight: 200;
-}
-.roboto-slab-bold {
-    font-weight: 700;
-}
-
-.rubik {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-}
-
 .rubik-mono-one {
     font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 400;
+}
+
+.vollkorn {
+    font-family: "Vollkorn", serif;
     font-weight: 400;
 }

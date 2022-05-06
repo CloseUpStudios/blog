@@ -7,7 +7,7 @@ export default function Spotlight({article, forward=true}) {
     return (
         <BackgroundImage className="spotlightSlide" image={article.mainImage} spotlight={true} slug={article.slug.current} forward={forward}>
             <div>
-                <span className="spotlightTitle rubik">{article.title}</span>
+                <span className="spotlightTitle roboto roboto-bold">{article.title}</span>
                 <Tags tags={article.tags} full={false} />
             </div>
             <div>

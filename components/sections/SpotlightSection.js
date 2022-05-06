@@ -7,7 +7,7 @@ import Spotlight from '../cards/SpotlightCard';
 export default function SpotlightSection({data, className = "", forward = true}) {
     return (
         <section className={className} id="spotlight">
-            <h2 className="smallHeader roboto" style={{fontSize:"18pt"}}>Spotlight</h2>
+            <h2 className="smallHeader" style={{fontSize:"18pt"}}>Spotlight</h2>
             <Swiper
                 modules={[Scrollbar]}
                 direction="horizontal"

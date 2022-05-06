@@ -11,7 +11,7 @@ export default function CardSection({data}) {
                 <div id="search" style={{display:"none"}}>
                     <div>
                         <input id="articleSearch" type="text"></input>
-                        <label className="rubik_light" id="projectLabel">search</label>
+                        <label className="roboto roboto-light" id="projectLabel">search</label>
                     </div>
                 </div>
             </div>

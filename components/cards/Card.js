@@ -8,7 +8,7 @@ export default function Card({article}) {
         <Link href={`/post/${article.slug.current}?forward=true`} passHref>
             <BackgroundImage className="spotlightSlide articleCard" image={article.mainImage} spotlight={true} slug={article.slug.current} >
                 <div>
-                    <span className="spotlightTitle articleCardTitle rubik" >{article.title}</span>
+                    <span className="spotlightTitle articleCardTitle roboto roboto-bold" >{article.title}</span>
                     <Tags tags={article.tags} full={false} />
                     <div className="subtitle roboto roboto-light">{article.tldr}</div>
                 </div>

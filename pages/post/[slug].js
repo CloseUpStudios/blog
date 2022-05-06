@@ -26,7 +26,7 @@ const ArticleView = ({ article, data }) => {
             <BackgroundImage image={article.mainImage} slug={article.slug.current} />  
             <div className={articleStyle.articleWrapper}>
               <Meta article={article} />
-              <div className={`${articleStyle.title} roboto-slab`}>{article.title}</div>
+              <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
               <Tags tags={article.tags} full={true} />
               <div className={`${articleStyle.subtitle} roboto `} style={{fontStyle:"italic"}}>{article.subtitle}</div>
               <div className={`${articleStyle.content} roboto roboto-light`}>
