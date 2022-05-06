@@ -107,6 +107,7 @@
     flex-direction: row;
     width: 100%;
     align-content: center;
+    text-decoration: none !important;
 }
 
 .tag {
@@ -120,6 +121,7 @@
     justify-content: center;
     margin: .5em;
     border-radius: 3px;
+    text-decoration: none !important;
 }
 
 .tag:first-child {

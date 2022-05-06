@@ -23,7 +23,7 @@ const ArticleView = ({ article, data }) => {
           <Header title={article.title} />
           <Navbar />
           <div id='content_wrapper' style={{marginTop:0}}> 
-            <BackgroundImage image={article.mainImage} slug={article.slug.current} />  
+            <BackgroundImage image={article.mainImage} slug={article.slug.current} spotlight={false} />  
             <div className={articleStyle.articleWrapper}>
               <Meta article={article} />
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
@@ -59,7 +59,6 @@ export const getServerSideProps = async (context) => {
 
   // single article for article view
   const slug = context.params.slug;
-  console.log("forward:", context.query.forward);
 
   if(context.query.forward == undefined || (context.query.forward != "true")) {
     // get data from sanity

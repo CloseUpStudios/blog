@@ -167,7 +167,12 @@ header h1 {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0 0 11px 11px;
-    opacity: 0.45;
+    opacity: 0.25;
+    transition: opacity .5s;
+}
+
+#articleView .article_image:hover {
+    opacity: .7;
 }
 
 

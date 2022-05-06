@@ -6,6 +6,12 @@
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 375px) {
+    .articleWrapper {
+        width: 90%;
+    }
+}
+
 .meta {
     display: flex;
     flex-direction: row;
@@ -32,6 +38,8 @@
     width: 100%;
     margin: 0.5rem 0;
     font-size: 16pt;
+    background-color: #12121221;
+    border-radius: 3px;
 }
 
 

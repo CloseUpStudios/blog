@@ -6,15 +6,23 @@
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 375px) {
+    .userWrapper {
+        width: 90%;
+    }
+}
+
+
 .bgimage {
     position: absolute;
     top: 0;
     left: 0;
-    height: 15rem;
+    height: 50rem;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: .25;
+    border-radius: 0 0 11px 11px;
 }
 
 .image {
@@ -23,6 +31,8 @@
     border-radius: 50%;
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 15;
 }
 
 .userMeta {
@@ -30,11 +40,70 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 10rem;
 }
 
 .userMeta h1 {
     background-color: transparent !important;
     color: white !important;
-    font-family: "Poppins", sans-serif;
+    font-family: "Vollkorn", sans-serif;
     font-size: 24pt;
+}
+
+.introduction {
+    font-size: 18px;
+    font-family: "Roboto Flex", sans-serif;
+    color: white;
+    margin-bottom: 1rem;
+    width: 50%;
+    white-space: break-spaces;
+    text-align: center;
+}
+
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.socialIcon {
+    margin: 1rem;
+    font-size: 22pt;
+    cursor: pointer;
+    transition: color .25s;
+}
+
+.socialIcon:hover, .arrow {
+    color: var(--lightestOrange);
+}
+
+.arrow {
+    display: none;
+    margin-top: 5rem;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color .25s;
+}
+
+.arrow:hover {
+    color: white;
+}
+
+.bgimage {
+    height: 100vh;
+}
+.userMeta {
+    margin-bottom: 50vh;
+}
+.arrow {
+    display: block;
+}
+
+@media screen and (max-width: 425px) {
+    .userMeta {
+        margin-bottom: 25vh;
+    }
 }

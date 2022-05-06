@@ -46,6 +46,11 @@ a:hover {
     color: var(--lightestOrange);
 }
 
+#latest_articles > a, #spotlight a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
 h3 {
     background-color: #dec3ff;
     color: #2d1748;
@@ -78,4 +83,10 @@ h1 {
         font-size: 14px;
         white-space: break-spaces;
     }
+    a {
+        white-space: break-spaces;
+        word-break: break-all;
+    }
 }
+
+

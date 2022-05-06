@@ -1,6 +1,6 @@
 ::selection {
-    background-color: var(--dark_orange);
-    color: var(--material_dark);
+    background-color: white;
+    color: black;
 }
 
 html {

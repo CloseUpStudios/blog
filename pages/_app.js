@@ -9,12 +9,13 @@ import '../styles/fonts.css'
 import '../styles/textStyles.css'
 import "../styles/global.css"
 
+import Footer from "../components/Footer";
+import ScrollToTopArrow from '../components/ScrollToTopArrow';
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-
       <NextNProgress color="#F8CD86" />
       <ToastContainer
             position="top-center"
@@ -29,7 +30,9 @@ function MyApp({ Component, pageProps }) {
             transition={Slide}
             limit={2}
           />
+      <ScrollToTopArrow />
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }

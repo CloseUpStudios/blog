@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import { useAmp } from "next/amp";
 const config = { amp: "true "}
 
+
 function Home({ data}) {
   const loadAmp = useAmp();
 
