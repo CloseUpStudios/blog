@@ -65,6 +65,7 @@
     justify-content: center;
     margin-bottom: 3rem;
     text-align: justify;
+    flex-direction: column;
 }
 
 @media screen and (max-width:786px) {
