@@ -148,4 +148,7 @@
         height: 15rem;
         margin: 1rem;
     }
+    .tag {
+        font-size: 12px;
+    }
 }
