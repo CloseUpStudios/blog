@@ -1,0 +1,79 @@
+h1, h2, h3, h4, h5, h6, p, li {
+    font-family: "Roboto", sans-serif;
+}
+
+
+h1, h2 {
+    font-size: 24px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+
+p, li, a, code, h3 {
+    font-size: 20px;
+    color: white;
+}
+
+
+code {
+    color: white !important;
+    font-size: 16px;
+    text-shadow: none !important;
+    background: none !important;
+}
+
+pre div {
+    background-color: #000000 !important;
+    border-radius: 3px;
+    box-shadow: 0 10px 15px #0000001c;
+    cursor: pointer;
+}
+
+
+a {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+a:hover {
+    color: var(--lightestOrange);
+}
+
+h3 {
+    background-color: #dec3ff;
+    color: #2d1748;
+    padding: .5rem;
+    border-radius: 3px;
+}
+
+h2 {
+    background-color: #614483;
+    color: #dec0ff;
+    padding: .5rem;
+    border-radius: 3px;
+}
+
+h1 {
+    background-color: transparent;
+    color: white;
+}
+
+
+@media screen and (max-width: 375px) {
+    li {
+        font-size: 16px;
+    }
+    pre {
+        display: flex;
+    }
+    code {
+        width: 100%;
+        font-size: 14px;
+        white-space: break-spaces;
+    }
+}

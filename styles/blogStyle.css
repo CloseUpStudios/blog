@@ -88,35 +88,20 @@ header h1 {
     background-color: transparent;
 }
 
+#latest .smallHeader {
+    margin: 0;
+    padding: 0;
+    transform: translateY(-2px);
+}
+
 .lightestOrange {
     color: var(--lightestOrange);
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
-    font-family: "Roboto", sans-serif;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-}
 
-#content_wrapper h1, h2 {
-    background-color: var(--lightYellow);
-    color: black;
-    padding: .5rem;
-    border-radius: 3px;
-    user-select: none;
-}
 
-a {
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-}
 
-a:hover {
-    color: var(--lightestOrange);
-}
 
 
 /* SPOTLIGHT
@@ -187,24 +172,3 @@ a:hover {
 
 
 
-/* sanity styles */
-
-.code {
-    font-family: "monospace";
-}
-
-.em {
-    font-style: italic;
-}
-
-.strong {
-    font-weight: bold;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.strike-through {
-    text-decoration: line-through;
-}

@@ -52,6 +52,7 @@
     height: fit-content;
     margin-right: .5rem;
 }
+
 .tag:last-child {
     margin-right: 0;
 }

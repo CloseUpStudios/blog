@@ -1,26 +1,29 @@
-import { useRouter } from 'next/router';
 import Header from '../../components/Header';
-import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import BackgroundImage from '../../components/cards/BackgroundImage';
-import SpotlightSection from '../../components/sections/SpotlightSection';
 import userStyle from '../../styles/userView.module.css';
 import CardSection from "../../components/sections/CardSection";
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../components/Markdown';
+
+
 
 const ArticleView = ({ user }) => {
   try {
     return (
-      <div id="userView" className={userStyle.wrapper}>
-        {console.log(user)}
+      <div id="userView" >
           <Header title={user.name} />
-          <div id="colorOverlay"></div>
           <Navbar />
-          <div id='content_wrapper' className={userStyle.contentWrapper} style={{marginTop:0}}> 
-            <h1>{user.name}</h1>
-            <ReactMarkdown>{user.bio}</ReactMarkdown>
-            <CardSection data={user.posts} />
-            
+          <div id='content_wrapper' > 
+ 
+            <BackgroundImage className={userStyle.bgimage} image={user.bgimage} slug={user.slug.current} forward={false} />  
+            <div className={userStyle.userWrapper}>
+            <div className={userStyle.userMeta}>
+              <BackgroundImage className={userStyle.image} image={user.image} slug={user.slug.current} forward={false} />  
+              <h1>{user.name}</h1>
+            </div>
+              <Markdown childs={user.bio} />
+              <CardSection data={user.posts} />
+            </div>
           </div>
       </div>
   )
@@ -38,7 +41,7 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: true
+  useCdn: false
 });
 
 export const getServerSideProps = async (context) => {

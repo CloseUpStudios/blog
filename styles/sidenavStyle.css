@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 768px) {
     .navbar h1 {
-        display: none;
+        font-size: 16px;
     }
 }
 

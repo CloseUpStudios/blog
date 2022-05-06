@@ -1,15 +1,8 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import Script from 'next/script';
 import SpotlightSection from '../components/sections/SpotlightSection';
-import Card from '../components/cards/Card';
 import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
-import useSWR from "swr";
 import { useAmp } from "next/amp";
-
 const config = { amp: "true "}
 
 function Home({ data}) {

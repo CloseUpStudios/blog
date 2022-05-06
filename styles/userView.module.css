@@ -1,9 +1,40 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 5rem;
+.userWrapper {
+    margin-top: 2rem;
+    padding: 1rem;
+    min-width: 75%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
-.contentWrapper {
-    max-width: 75%;
+.bgimage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .25;
+}
+
+.image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.userMeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userMeta h1 {
+    background-color: transparent !important;
+    color: white !important;
+    font-family: "Poppins", sans-serif;
+    font-size: 24pt;
 }

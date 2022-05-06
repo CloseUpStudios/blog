@@ -1,13 +1,11 @@
-import { useRouter } from 'next/router';
 import Header from '../../components/Header';
-import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import BackgroundImage from '../../components/cards/BackgroundImage';
 import SpotlightSection from '../../components/sections/SpotlightSection';
 import articleStyle from '../../styles/articleView.module.css';
 import Meta from '../../components/cards/Meta';
-import ReactMarkdown from 'react-markdown';
 import Tags from '../../components/cards/Tags';
+import Markdown from "../../components/Markdown";
 
 const ArticleView = ({ article, data }) => {
   if(!data) {
@@ -23,7 +21,6 @@ const ArticleView = ({ article, data }) => {
     return (
       <div id="articleView">
           <Header title={article.title} />
-          
           <Navbar />
           <div id='content_wrapper' style={{marginTop:0}}> 
             <BackgroundImage image={article.mainImage} slug={article.slug.current} />  
@@ -33,7 +30,7 @@ const ArticleView = ({ article, data }) => {
               <Tags tags={article.tags} full={true} />
               <div className={`${articleStyle.subtitle} roboto `} style={{fontStyle:"italic"}}>{article.subtitle}</div>
               <div className={`${articleStyle.content} roboto roboto-light`}>
-                <ReactMarkdown>{article.body}</ReactMarkdown>
+                <Markdown childs={article.body} />
               </div>
             </div>
             <SpotlightSection className={articleStyle.article_spotlight} data={data} forward={false} />
