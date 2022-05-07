@@ -180,6 +180,22 @@ header h1 {
    
 }
 
+#latest > div {
+    display: flex;
+    width: 100%; 
+    flex-direction: row; 
+    flex-wrap:wrap; 
+    align-items: center; 
+    justify-content:space-between; 
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+
+#latest > div .smallHeader {
+    width: fit-content;
+}
+
 #latest_articles {
     align-items: center;
 }
