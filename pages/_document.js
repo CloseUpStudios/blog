@@ -8,8 +8,7 @@ class MyDocument extends Document {
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex&family=Rubik+Mono+One&family=Vollkorn&display=swap" rel="stylesheet" />
-                                
+                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Flex:opsz@8..144&family=Rubik+Mono+One&family=Vollkorn&display=swap" rel="stylesheet" />               
                 </Head>
                 <body>
                     <Main />

@@ -6,6 +6,7 @@ import articleStyle from '../../styles/articleView.module.css';
 import Meta from '../../components/cards/Meta';
 import Tags from '../../components/cards/Tags';
 import Markdown from "../../components/Markdown";
+import NoSsr from '../../components/NoSsr';
 
 const ArticleView = ({ article, data }) => {
   if(!data) {
@@ -23,7 +24,7 @@ const ArticleView = ({ article, data }) => {
           <Header title={article.title} />
           <Navbar />
           <div id='content_wrapper' style={{marginTop:0}}> 
-            <BackgroundImage image={article.mainImage} slug={article.slug.current} spotlight={false} />  
+            <BackgroundImage image={article.mainImage} slug={article.slug.current} spotlight={false} postLink={false} />  
             <div className={articleStyle.articleWrapper}>
               <Meta article={article} />
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
@@ -51,7 +52,7 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: true
+  useCdn: false
 });
 
 export const getServerSideProps = async (context) => {

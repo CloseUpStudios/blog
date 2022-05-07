@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 24pt;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 0 !important;
+    min-height: 70vh !important;
+}
+
+.subWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 1rem;
+    justify-content: center;
+}
+
+.subWrapper button {
+    margin: 0 !important;
+    margin-top: 1rem !important;
+}
+
+
+.title {
+    font-size: 48pt;
+    color: var(--lightestOrange);
+}
+
+.subtitle {
+    font-size: 24pt;
+}
+
+.icon {
+    font-size: 48pt;
+}

@@ -33,6 +33,7 @@
     background-repeat: no-repeat;
     position: relative;
     z-index: 15;
+    filter: blur(0) !important;
 }
 
 .userMeta {

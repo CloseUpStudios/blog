@@ -1,4 +1,6 @@
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { toast } from "react-toastify";
@@ -7,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Markdown({ childs }) {
     return (
         <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
         // eslint-disable-next-line react/no-children-prop
         children={childs}
         components={{

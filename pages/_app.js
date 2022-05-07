@@ -1,5 +1,6 @@
 import { ToastContainer, Slide } from 'react-toastify';
 import NextNProgress from 'nextjs-progressbar'
+import splitbee from "@splitbee/web";
 
 import '../styles/blogStyle.css'
 import '../styles/cardStyle.css'
@@ -12,6 +13,8 @@ import "../styles/global.css"
 import Footer from "../components/Footer";
 import ScrollToTopArrow from '../components/ScrollToTopArrow';
 
+
+splitbee.init();
 
 function MyApp({ Component, pageProps }) {
   return (
