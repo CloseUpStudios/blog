@@ -18,7 +18,6 @@ const ArticleView = ({ user }) => {
     return (
       <div id="userView" >
           <Header title={user.name} />
-          <Navbar />
           <div id='content_wrapper'>
             <BackgroundImage className={userStyle.bgimage} image={user.bgimage} slug={user.slug.current} forward={false} spotlight={false} userImg={true} postLink={false} />  
             <div className={userStyle.userWrapper}>
@@ -85,7 +84,7 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: false
+  useCdn: true
 });
 
 export const getServerSideProps = async (context) => {

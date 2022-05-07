@@ -20,7 +20,7 @@ export default function Footer({ }) {
                 <div className={footerStyle.subLinks}>
                     <h3>Info</h3>
                     <Link href={`/`} ><a className={footerStyle.link}>About</a></Link>
-                    <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
+                    <Link href={`/privacy`} ><a className={footerStyle.link}>Privacy Policy</a></Link>
                     <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
                     <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
                 </div>

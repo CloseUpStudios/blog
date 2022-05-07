@@ -45,7 +45,6 @@ function Home({ data}) {
     <div id="root">
     {saveDataInLocalStorage(data)}
       <Header title="Home" />
-      <Navbar/>
       <main>
         
         <div id="content_wrapper">

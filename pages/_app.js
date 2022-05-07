@@ -12,14 +12,16 @@ import "../styles/global.css"
 
 import Footer from "../components/Footer";
 import ScrollToTopArrow from '../components/ScrollToTopArrow';
+import Navbar from '../components/Navbar';
 
 
-splitbee.init();
+splitbee.init({disabledCookies:true});
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <NextNProgress color="#F8CD86" />
+      <Navbar />
       <ToastContainer
             position="top-center"
             autoClose={500}

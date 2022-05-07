@@ -10,7 +10,6 @@ const goBack = () => {
 export default function Custom404() {
     return (
         <>
-        <Navbar />
         <div id="content_wrapper" className={NotFoundStyle.wrapper}>
             <div className={NotFoundStyle.subWrapper}>
                 <div className={NotFoundStyle.title}>404</div>
