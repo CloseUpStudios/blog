@@ -34,7 +34,7 @@ export default function Privacy() {
                     </ul>
 
                     <p>The User ID is generated each time you visit this domain. It is not tracked across multiple days, or across domains.</p>
-                    <p>There is a cookie placed by Vercel (the hosting service provider). It's just there because I don't know how to turn it off. I will as soon as I find out.</p>
+                    <p>There is a cookie placed by Vercel (the hosting service provider). Its just there because I dont know how to turn it off. I will as soon as I find out.</p>
         
                     <p>If you wish to opt-out completely, install uBlock Origin. It will block any analytics here.</p>
 
