@@ -1,17 +1,12 @@
 import SpotlightSection from '../components/sections/SpotlightSection';
 import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
-import Navbar from '../components/Navbar';
-import { useAmp } from "next/amp";
 import BackgroundImage from '../components/cards/BackgroundImage';
 import Meta from '../components/cards/Meta';
 import Tags from '../components/cards/Tags';
 import Link from "next/link";
-import NoSsr from '../components/NoSsr';
-const config = { amp: "true "}
 
 function Home({ data}) {
-  const loadAmp = useAmp();
 
   const saveDataInLocalStorage = (data) => {
     if(typeof window !== 'undefined') {

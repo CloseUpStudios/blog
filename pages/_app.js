@@ -12,12 +12,15 @@ import "../styles/global.css"
 
 import Footer from "../components/Footer";
 import ScrollToTopArrow from '../components/ScrollToTopArrow';
-import Navbar from '../components/Navbar';
-
+import Navbar from '../components/Navbar'
+;
+import { useAmp } from "next/amp";
+const config = { amp: "true "}
 
 splitbee.init({disabledCookies:true});
 
 function MyApp({ Component, pageProps }) {
+  const loadAmp = useAmp();
   return (
     <>
       <NextNProgress color="#F8CD86" />
