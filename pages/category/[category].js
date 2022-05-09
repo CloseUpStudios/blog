@@ -76,7 +76,6 @@ export const getServerSideProps = async (context) => {
     data = data[0];
     category = data;
     data = data.posts;
-    console.log(data)
   return { props: { data, category }};
 }
 
