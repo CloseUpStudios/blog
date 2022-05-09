@@ -5,7 +5,11 @@ export default function Footer({ }) {
     
     return (
         <footer className={footerStyle.footer}>
+        <div>
             <h1 className='rubik-mono-one'>Closed[in]</h1>
+            <span>Brought to you by Close-up Studios</span>
+        </div>
+            
 
         
             <div className={footerStyle.links}>
@@ -21,8 +25,7 @@ export default function Footer({ }) {
                     <h3>Info</h3>
                     <Link href={`/`} ><a className={footerStyle.link}>About</a></Link>
                     <Link href={`/privacy`} ><a className={footerStyle.link}>Privacy Policy</a></Link>
-                    <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
-                    <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
+
                 </div>
             </div>
 

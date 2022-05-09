@@ -46,7 +46,6 @@ function Home({ data}) {
     {saveDataInLocalStorage(data)}
       <Header title="Home" />
       <main>
-        
         <div id="content_wrapper">
           {randomArticle()}
           <CardSection data={data}></CardSection>

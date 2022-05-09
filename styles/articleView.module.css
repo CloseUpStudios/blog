@@ -1,9 +1,10 @@
 .articleWrapper {
     margin-top: 10rem;
     padding: 1rem;
-    min-width: 75%;
+    min-width: 85%;
     margin-left: 50%;
     transform: translateX(-50%);
+    line-height: 1.5;
 }
 
 @media screen and (max-width: 375px) {
@@ -35,7 +36,6 @@
 
 .subtitle {
     padding: 1rem;
-    width: 100%;
     margin: 0.5rem 0;
     font-size: 16pt;
     background-color: #12121221;
@@ -73,7 +73,7 @@
     padding: 0 1rem;
     justify-content: center;
     margin-bottom: 3rem;
-    text-align: justify;
+    text-align: left;
     flex-direction: column;
 }
 

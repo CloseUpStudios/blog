@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     padding: 4rem 10rem;
 }
 
@@ -18,7 +18,7 @@
 .links {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .subLinks {
