@@ -175,12 +175,30 @@ header h1 {
         width: fit-content;
         text-align: center;
     }
+    .featuredMeta .spotlightAuthor {
+        flex-direction: row !important;
+        padding-left: 0;
+    }
+    .featuredMeta .spotlightAuthor div:first-child {
+        margin-right: .5rem;
+    }
     .featuredMeta__meta {
         align-items: flex-start !important;
         margin-top: 5rem !important;
     }
     .featuredMeta__meta .spotlightMeta {
         align-items: flex-start;
+    }
+    .featuredMeta__meta .tags {
+        flex-direction: row !important;
+        margin-bottom: .25rem !important;
+        margin-top: .25rem !important;
+    }
+    .featuredMeta__meta .tag {
+        margin-right: .5rem;
+    }
+    .featuredMeta__meta .tag:last-child {
+        margin-right: 0;
     }
 }
 

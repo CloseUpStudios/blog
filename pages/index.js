@@ -30,6 +30,7 @@ function Home({ data}) {
             <div className='featuredMeta__meta'>
               <Meta userImg={true} className="featuredMeta" article={article} />
               <h1>{article.title}</h1>
+              <Tags tags={article.tags} />
               <p style={{ margin:"0", marginBottom:".5rem", width:"100%", textAlign:"left" }} >{article.tldr}</p>
               <Link href={`/post/${article.slug.current}`} >
                 <a>
