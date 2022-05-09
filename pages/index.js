@@ -21,15 +21,24 @@ function Home({ data}) {
           <>
             <BackgroundImage userImg={true} className="featuredBG " image={article.mainImage} spotlight={false} slug={article.slug.current} postLink={false} />
             <div className='featuredMeta'>
-              <Meta article={article} />
+            <div>
+              <p style={{ margin:"0" }} >Welcome to</p>
+                <h1>Closed[in]</h1>
+              <p>The Blog brought to you by Close-up Studios!</p>
+            </div>
+            
+            <div className='featuredMeta__meta'>
+              <Meta userImg={true} className="featuredMeta" article={article} />
               <h1>{article.title}</h1>
-              <Tags tags={article.tags} full={false} />
-              <p>{article.subtitle}</p>
+              <p style={{ margin:"0", marginBottom:".5rem", width:"100%", textAlign:"left" }} >{article.tldr}</p>
               <Link href={`/post/${article.slug.current}`} >
                 <a>
-                  <button className="btn btn_secondary">Read More</button>
+                  <button className="btn btn_small">Read Newest</button>
                 </a>
               </Link>
+            </div>
+        
+        
             </div>
           </>
         )

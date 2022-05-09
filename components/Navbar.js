@@ -1,5 +1,6 @@
 import NavbarItem from './NavbarItem'
 import { FaBars, FaTimesCircle } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navbar() {
 
@@ -52,7 +53,12 @@ export default function Navbar() {
         <>
             <div onClick={closeNav} id="colorOverlay"></div>
             <div className='navbar'>
-                <h1 className='rubik-mono-one'>Closed[in]</h1>
+            <Link href="/">
+                <a>
+                    <h1 className='rubik-mono-one'>Closed[in]</h1>
+                </a>
+            </Link>
+                
                 <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer" />
             </div>
             <div id="sidebar" className="sidenav">

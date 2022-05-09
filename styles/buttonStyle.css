@@ -16,6 +16,8 @@
     cursor: pointer;
     font-family: "Roboto Flex", sans-serif;
     font-weight: 700;
+    white-space: break-spaces;
+    word-break: keep-all;
 }
 
 .btn_primary{
@@ -49,6 +51,23 @@ a {
 .btn_secondary:hover {
     background: white;
     color: var(--realDark);
+}
+
+.btn_small {
+    font-size: 9pt;
+    margin: 0;
+    background: transparent;
+    border: solid 1px white;
+    color: white;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    padding: .5rem .75rem;
+    border-radius: 3px;
+}
+
+.btn_small:hover {
+    background-color: white;
+    color: black;
 }
 
 

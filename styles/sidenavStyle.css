@@ -63,7 +63,7 @@
 }
 
 .sidenav a:first-child svg:hover {
-    transform: rotate(-250deg);
+    transform: rotate(-720deg);
 }
 
 .sidenav .disabled {
