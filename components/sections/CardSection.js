@@ -14,7 +14,7 @@ export default function CardSection({data, overwrite="Latest"}) {
                 <div id="searchWrapper">
                     <FaSearch id="searchIcon" className="searchIcon" onClick={expandSearch} />
                     <div id="search">
-                        <input id="articleSearch" type="text" ></input>
+                        <input id="articleSearch" type="search" ></input>
                     </div>
                 </div>
             </div>

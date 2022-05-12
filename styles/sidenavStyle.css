@@ -40,6 +40,10 @@
     font-size: 18pt;
 }
 
+.navbar h1:hover {
+    color: var(--lightestOrange);
+}
+
 @media screen and (max-width: 768px) {
     .navbar h1 {
         font-size: 16px;

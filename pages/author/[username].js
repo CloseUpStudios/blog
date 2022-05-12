@@ -27,33 +27,31 @@ const ArticleView = ({ user }) => {
               <div className={userStyle.introduction}>{user.introduction}</div>
               <div className={userStyle.socials}>
 
+
+
+
+
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("instagram") ? (
-                <Link href={user.socials.instagram} passHref>
-                  <a target={"_blank"} rel={"noopener noreferrer"}>
+                  <a href={user.socials.instagram} target={"_blank"} rel={"noopener noreferrer"}>
                     <FaInstagram className={userStyle.socialIcon} />
                   </a>
-                </Link>
                 ) : null
               ) : null}
 
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("twitter") ? (
-                  <Link href={user.socials.twitter} passHref>
-                    <a target={"_blank"} rel={"noopener noreferrer"}>
-                      <FaTwitter className={userStyle.socialIcon} />
-                    </a>
-                  </Link>
+                  <a href={user.socials.twitter} target={"_blank"} rel={"noopener noreferrer"}>
+                    <FaTwitter className={userStyle.socialIcon} />
+                  </a>
                 ) : null
               ) : null}
 
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("linkedin") ? (
-                  <Link href={user.socials.linkedin} passHref>
-                    <a target={"_blank"} rel={"noopener noreferrer"}>
-                      <FaLinkedinIn className={userStyle.socialIcon} />
-                    </a>
-                  </Link>
+                  <a href={user.socials.linkedin} target={"_blank"} rel={"noopener noreferrer"}>
+                    <FaLinkedinIn className={userStyle.socialIcon} />
+                  </a>
                 ) : null
               ) : null}
             
