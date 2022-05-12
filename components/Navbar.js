@@ -47,7 +47,7 @@ export default function Navbar() {
         }
     }
 
-    const items = ["Home", "IT", "Film", "Cooking"];
+    const items = ["Home", "IT", "Film", "Cooking", "Math"];
 
     return (
         <>
