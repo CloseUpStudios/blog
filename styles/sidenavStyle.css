@@ -60,7 +60,7 @@
     width: 60%;
 }
 
-.sidenav a:first-child {
+.sidenav span {
     color: white !important;
     width: 85%;
     font-size: 23pt;
@@ -68,11 +68,11 @@
     transition: transform .1s;
 }
 
-.sidenav a:first-child svg {
+.sidenav span svg {
     transition: all 1s;
 }
 
-.sidenav a:first-child svg:hover {
+.sidenav span svg:hover {
     transform: rotate(-720deg);
 }
 
