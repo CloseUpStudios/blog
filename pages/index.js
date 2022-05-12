@@ -31,7 +31,7 @@ function Home({ data}) {
               <Meta userImg={true} className="featuredMeta" article={article} />
               <h1>{article.title}</h1>
               <Tags tags={article.tags} />
-              <p style={{ margin:"0", marginBottom:".5rem", width:"100%", textAlign:"left" }} >{article.tldr}</p>
+              <p className='subtitle' style={{ margin:"0", marginBottom:".5rem", width:"100%", textAlign:"left" }} >{article.tldr}</p>
               <Link href={`/post/${article.slug.current}`} >
                 <a>
                   <button className="btn btn_small">Read Newest</button>
@@ -49,7 +49,7 @@ function Home({ data}) {
   return (
     <div id="root">
     {saveDataInLocalStorage(data)}
-      <Header title="Home" />
+      <Header title="Closed[in]" />
       <main>
         <div id="content_wrapper">
           {randomArticle()}

@@ -33,9 +33,12 @@ const CategoryView = ({ data, category }) => {
     try {
     return (
         <div id="articleView">
-            <Header title={category.title} />
+            <Header title={`${category.title} | Closed[in]`} />
             <main>
                 <div id='content_wrapper' style={{marginTop:0}}> 
+                <div className='categoryHeader' >
+                    <h1>{category.title}</h1>
+                </div>
                     {randomArticle()}
                     <CardSection data={data} overwrite={`Latest in ${category.title}`} />
                     <SpotlightSection className={articleStyle.article_spotlight} data={data} forward={false} />

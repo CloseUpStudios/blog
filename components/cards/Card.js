@@ -11,7 +11,7 @@ export default function Card({article}) {
                     <div>
                         <span className="spotlightTitle articleCardTitle roboto roboto-bold" >{article.title}</span>
                         <Tags tags={article.tags} full={false} />
-                        <div className="subtitle roboto roboto-light">{article.tldr}</div>
+                        <div className="subtitle roboto roboto-light">{article.subtitle}</div>
                     </div>
                     <div>
                         <Meta article={article} />

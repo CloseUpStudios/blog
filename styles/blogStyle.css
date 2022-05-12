@@ -101,6 +101,25 @@ header h1 {
     color: var(--lightestOrange);
 }
 
+.categoryHeader {
+    background-color: var(--lightestOrange);
+    color: black;
+    padding: .25rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 25%;
+    border-radius: 0 3px 3px 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.categoryHeader h1 {
+    color: inherit;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 24px;
+}
 
 .featuredBG {
     position: absolute;
@@ -119,13 +138,23 @@ header h1 {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    height: 50vh;
+    height: 20rem;
     margin-bottom: 7rem;
     position: relative;
     z-index: 10;
-    margin-top: 10rem;
 }
 
+.featuredMeta h1 {
+    text-align: left !important;
+}
+
+#root .featuredMeta .tags {
+    justify-content: flex-start !important;
+}
+
+#root .featuredMeta {
+    height: 35rem;
+}
 
 .featuredMeta h1 {
     font-size: 3rem;
@@ -160,9 +189,37 @@ header h1 {
     margin-left: 0;
 }
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 768px) {
+    .featuredMeta h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .featuredMeta .tags {
+        justify-content: center;
+    }
     .featuredMeta {
         align-items: center;
+    }
+    .featuredMeta h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: .25rem;
+    }
+    .featuredMeta p {
+        width: 100%;
+        margin: .5rem;
+        text-align: center;
+    }
+    .featuredMeta .tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     .featuredMeta div {
         margin: 0;
@@ -203,12 +260,16 @@ header h1 {
 }
 
 @media screen and (max-width: 320px) {
+    #root .featuredMeta {
+        height: 35rem;
+    }
+    .featuredMeta {
+        height: 20rem;
+    }
     .featuredMeta p {
         width: 100%;
     }
 }
-
-
 
 #latest, #spotlight {
     z-index: 2;
@@ -251,14 +312,15 @@ header h1 {
     height: fit-content;
     width: 100%;
     margin-bottom: 2rem;
-   
 }
 
 #latest > div {
     display: flex;
     width: 100%; 
     flex-direction: row; 
-    flex-wrap:wrap; 
+    gap: 20px;
+    flex-wrap: wrap; 
+    overflow: visible;
     align-items: center; 
     justify-content:space-between; 
     margin-bottom: 2rem;
