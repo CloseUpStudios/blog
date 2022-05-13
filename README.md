@@ -3,3 +3,5 @@
 
 ### Running on:
 - Next.js (React.js)
+- React-Markdown
+- Katex
