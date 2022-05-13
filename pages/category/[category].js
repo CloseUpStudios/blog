@@ -7,6 +7,16 @@ import Meta from '../../components/cards/Meta';
 import Tags from '../../components/cards/Tags';
 import Link from "next/link";
 
+const saveDataInLocalStorage = (data) => {
+    if(typeof window !== 'undefined') {
+      // refresh data in localStorage
+      localStorage.removeItem("data");
+      localStorage.setItem('data', JSON.stringify(data))
+    }
+}
+
+
+
 const CategoryView = ({ data, category }) => {
 
     // return backgroundImage component with random article from data

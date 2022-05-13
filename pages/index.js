@@ -8,12 +8,6 @@ import Link from "next/link";
 
 function Home({ data}) {
 
-  const saveDataInLocalStorage = (data) => {
-    if(typeof window !== 'undefined') {
-      localStorage.setItem('data', JSON.stringify(data))
-    }
-  }
-
     // return backgroundImage component with random article from data
     const randomArticle = () => {
         const article = data[0];
@@ -48,7 +42,6 @@ function Home({ data}) {
 
   return (
     <div id="root">
-    {saveDataInLocalStorage(data)}
       <Header title="Closed[in]" />
       <main>
         <div id="content_wrapper">

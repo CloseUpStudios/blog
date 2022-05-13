@@ -3,6 +3,7 @@ import BackgroundImage from './BackgroundImage';
 import Tags from "./Tags";
 import Meta from "./Meta";
 
+// TODO - add spinner onClick
 export default function Card({article}) {
     return (
         <Link href={`/post/${article.slug.current}?forward=true`} passHref>
