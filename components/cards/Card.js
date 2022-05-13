@@ -10,7 +10,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 
 // TODO - add spinner onClick
 export default function Card({article}) {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const override = css`
         width: 160px;
