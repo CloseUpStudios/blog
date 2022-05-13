@@ -17,7 +17,12 @@ import Navbar from '../components/Navbar'
 import { useAmp } from "next/amp";
 const config = { amp: "true "}
 
-splitbee.init({disabledCookies:true});
+try {
+  splitbee.init({disabledCookies:true});
+} catch (e) {
+  console.log(e);
+}
+
 
 function MyApp({ Component, pageProps }) {
   const loadAmp = useAmp();
