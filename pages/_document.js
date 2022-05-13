@@ -50,11 +50,7 @@ class MyDocument extends Document {
                 <link rel='apple-touch-startup-image' href='/images/apple_splash_1242.png' sizes='1242x2208' />
                 <link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
                 <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
-
-
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Flex:opsz@8..144&family=Rubik+Mono+One&family=Vollkorn&display=swap" rel="stylesheet" />               
+          
                 </Head>
                 <body>
                     <Main />
