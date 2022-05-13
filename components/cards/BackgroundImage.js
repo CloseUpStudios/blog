@@ -17,7 +17,7 @@ const builder = imageUrlBuilder(SanityClient);
 builder.dataset("production"); builder.projectId("g2ejdxre")
 
 
-export default function backgroundImage({ image, className="article_image", children, spotlight="false", slug, forward="false", userImg="false", postLink="true" }) {
+export default function backgroundImage({ image, className="article_image", children, spotlight="false", slug, forward="false", userImg="false", postLink="true", onclick }) {
     let imageUrl = builder.image(image.asset._ref)
 
     if(spotlight) {
@@ -32,7 +32,11 @@ export default function backgroundImage({ image, className="article_image", chil
         return (
             <NoSsr>
                 <Link href={`/post/${slug}?forward=${forward}`} passHref>
-                        <div className={`${className}`} style={{backgroundImage:`${imageUrl}`}}>{children}</div>
+                        <div 
+                        className={`${className}`} 
+                        style={{backgroundImage:`${imageUrl}`}}
+                        onClick={onclick}>
+                        {children}</div>
                 </Link>
             </NoSsr>
         )
