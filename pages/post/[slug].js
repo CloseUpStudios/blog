@@ -47,6 +47,7 @@ const ArticleView = ({ article, data }) => {
 
 // sanity stuff
 import { createClient } from 'next-sanity'
+
 const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
@@ -54,7 +55,9 @@ const client = createClient({
   useCdn: true
 });
 
+
 export const getServerSideProps = async (context) => {
+
   let data = false, article = false;
 
   // single article for article view

@@ -8,14 +8,12 @@ import { useState, useCallback } from "react";
 import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";
 
-// TODO - add spinner onClick
 export default function Card({article}) {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const override = css`
         width: 160px;
         height: 160px;
-        transform: translateX(-6%);
     `;
 
     // check if loading is true

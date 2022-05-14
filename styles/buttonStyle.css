@@ -63,11 +63,25 @@ a {
     font-weight: 400;
     padding: .5rem .75rem;
     border-radius: 3px;
+    width: 9em;
+    height: 2.5em;
+    margin: .5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_small .spinner {
+    width: 100%;
+    height: 100%;
 }
 
 .btn_small:hover {
     background-color: white;
     color: black;
+}
+
+.btn_small:hover span {
+    border-color: black !important
 }
 
 

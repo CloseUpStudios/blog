@@ -56,8 +56,12 @@ const CategoryView = ({ data, category }) => {
             </main>
         </div>  )
     } catch(e) {
-    return(
-        <div>e</div> )
+        return {
+            redirect: {
+                destination: "/500",
+                permanent: false
+            },
+        }
     }
 }
 

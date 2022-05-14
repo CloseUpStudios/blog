@@ -66,12 +66,12 @@ const ArticleView = ({ user }) => {
       </div>
   )
   } catch(e) {
-    return(
-      <div>
-      Error
-      {console.log(e)}
-      </div>
-    )
+    return {
+      redirect: {
+          destination: "/500",
+          permanent: false
+      },
+    }
   }
 
 }
