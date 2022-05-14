@@ -6,10 +6,7 @@
     top: 0;
     width: 0;
     background: rgb(247,171,60);
-    background: -moz-linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
-    background: linear-gradient(180deg, rgba(247,171,60,1) 0%, rgba(255,200,119,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7ab3c",endColorstr="#ffc877",GradientType=1);
+    background: linear-gradient(180deg, #763bb1 0%, #4e178b 100%);
     box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.196);
     overflow-x: hidden;
     padding-top: 60px;
@@ -58,9 +55,10 @@
 
 .sidenav a {
     width: 60%;
+    height: 2rem;
 }
 
-.sidenav span {
+.sidenav > span {
     color: white !important;
     width: 85%;
     font-size: 23pt;

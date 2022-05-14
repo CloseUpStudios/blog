@@ -97,7 +97,7 @@
     height: 100vh;
 }
 .userMeta {
-    margin-bottom: 50vh;
+    margin-bottom: 20rem;
 }
 .arrow {
     display: block;
@@ -105,6 +105,6 @@
 
 @media screen and (max-width: 425px) {
     .userMeta {
-        margin-bottom: 25vh;
+        margin-bottom: 15rem;
     }
 }

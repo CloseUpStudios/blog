@@ -30,8 +30,13 @@
 }
 
 .btn_primary:hover {
+    color: var(--realDark);
+}
+
+.disabled:hover {
     background: transparent;
     color: white;
+    box-shadow: none;
     border : 2px solid white;
 }
 

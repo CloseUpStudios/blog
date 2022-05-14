@@ -1,12 +1,8 @@
 import Card from "../cards/Card"
-import { FaSearch } from "react-icons/fa";
-
 import SearchBar from "../SearchBar.js"
-import { useState, useEffect, useCallback } from "react";
-
+import { useState, useCallback } from "react";
 
 export default function CardSection({data, overwrite="Latest"}) {
-
     const [articles, setArticles] = useState([]);
 
     const saveDataInLocalStorage = (data) => {
@@ -19,9 +15,11 @@ export default function CardSection({data, overwrite="Latest"}) {
 
     const onSearchSubmit = useCallback(async term => {
         const data = JSON.parse(localStorage.getItem('data'));
-        const results = data.filter(article => article.title.toLowerCase().includes(term.toLowerCase()) 
+        const results = data.filter(article => 
+        article.title.toLowerCase().includes(term.toLowerCase()) 
         || article.subtitle.toLowerCase().includes(term.toLowerCase())
         || article.author.name.toLowerCase().includes(term.toLowerCase())
+        || article.tags.map(tag => tag.toLowerCase()).includes(term.toLowerCase())
         );
         setArticles(results);
     }, []);
@@ -36,7 +34,6 @@ export default function CardSection({data, overwrite="Latest"}) {
         )
     })
 
-
     return (
         <div id="latest" >
         {saveDataInLocalStorage(data)}
@@ -44,11 +41,9 @@ export default function CardSection({data, overwrite="Latest"}) {
                 <h2 className="smallHeader lightestOrange">{overwrite}</h2>
                 <SearchBar onSearchSubmit={onSearchSubmit} clearResults={clearResults} />
             </div>
-
             <div id="latest_articles">
                 {renderedArticles}
             </div>
-
         </div>
     )
 }

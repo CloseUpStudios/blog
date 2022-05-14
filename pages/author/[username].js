@@ -60,7 +60,7 @@ const ArticleView = ({ user }) => {
             </div>
             
               <Markdown childs={user.bio} />
-              <CardSection data={user.posts} />
+              <CardSection data={user.posts} overwrite={`Articles by ${user.name}`} />
             </div>
           </div>
       </div>
