@@ -3,7 +3,7 @@ import BackgroundImage from './BackgroundImage';
 import Tags from "./Tags";
 import Meta from "./Meta";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";

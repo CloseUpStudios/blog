@@ -2,7 +2,7 @@ import Meta from "./cards/Meta";
 import Link from "next/link";
 import Tags from "./cards/Tags";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";
 
