@@ -15,10 +15,11 @@
     justify-content: center !important;
     align-items: center;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 #searchView .searchComp {
-    padding: .75rem 1rem;
+    padding: 1rem .35rem 1rem .5rem !important;
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.347);
     width: 75%;
 }

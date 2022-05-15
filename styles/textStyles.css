@@ -103,6 +103,19 @@ h1 {
     color: white;
 }
 
+input[type="search" i]::-webkit-search-cancel-button  {
+    -webkit-appearance: none;
+}
+
+input:focus-visible {
+    outline: none;
+    border: solid 2px var(--lightestOrange);
+}
+
+#sidebar input:focus-visible {
+    border: solid 2px #13081e !important
+}
+
 input, .searchComp {
     outline: none;
     border: solid 2px #13081e;
@@ -111,9 +124,51 @@ input, .searchComp {
     font-family: "Roboto Flex", sans-serif !important;
     font-size: 14pt;
     font-weight: 300 !important;
-    border-radius: 6px;
-    padding: .35rem .5rem;
+    border-radius: 4px;
+    padding: .35rem 0 .35rem .5rem !important;
     transition: all .25s;
+}
+
+#sidebar #searchComp input {
+    font-size: 14px !important;
+    padding: .75rem .75rem;
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+}
+
+#sidebar form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: solid 1px transparent;
+}
+
+.searchButton {
+    background-color: #13081e !important;
+    color: white !important;
+    margin: 0 !important;
+    border-radius: 0 4px 4px 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 14px !important;
+    padding: 1rem 0 !important;
+}
+
+#sidebar .react-ripples {
+    width: 100%;
+}
+
+#sidebar form .react-ripples {
+    width: 30% !important;
+}
+
+.searchButton:hover {
+    background-color: #351d4f !important;
+}
+
+.searchActive {
+    background-color: #29153d !important;
+    color: #f8cd86 !important;
 }
 
 #searchComp > div {
@@ -134,12 +189,6 @@ input, .searchComp {
     background-color: rgb(220, 220, 220) !important;
     color: black !important;
 }
-
-input:focus-visible {
-    outline: none;
-    border: solid 2px var(--lightestOrange);
-}
-
 
 @media screen and (max-width: 375px) {
     li {

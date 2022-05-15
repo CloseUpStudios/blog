@@ -30,7 +30,7 @@ const SearchBar  = ({ onSearchSubmit, clearResults }) => {
             <div id="search">
                 <input 
                 id="articleSearch" 
-                type="text" 
+                type="search" 
                 placeholder="Articles, Subtitle, Authors"
                 onChange={e => setDebounceTerm(e.target.value)}
                 value={debounceTerm}

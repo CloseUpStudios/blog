@@ -4062,6 +4062,11 @@
     "unist-util-visit" "^4.0.0"
     "vfile" "^5.0.0"
 
+"react-ripples@^2.2.1":
+  "integrity" "sha512-TfLjgZICQlsYCN2iX4fdeZNjoDzhJVC7r+R3irqyaNvCtWezouS9j+sE+nwSk747irtV8RKRDHmwMmsNBOw8Qg=="
+  "resolved" "https://registry.npmjs.org/react-ripples/-/react-ripples-2.2.1.tgz"
+  "version" "2.2.1"
+
 "react-search-field@^2.0.1":
   "integrity" "sha512-4Qoe145ykncVhyA1gfoUEXTbiMdnJLIb4CFFo7vZT/sKn140HmP621W/4EtMEot3CThnUzxRPowPWybxDSipyA=="
   "resolved" "https://registry.npmjs.org/react-search-field/-/react-search-field-2.0.1.tgz"

@@ -1,7 +1,6 @@
 import { Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/scrollbar';
 import Spotlight from '../cards/SpotlightCard';
 
 export default function SpotlightSection({data, className = "", forward = true}) {
@@ -15,9 +14,6 @@ export default function SpotlightSection({data, className = "", forward = true})
                 slidesPerView={3}
                 spaceBetween={250}
                 className="swiper"
-                scrollbar={{
-                el:"swiper-scrollbar"
-                }}
                 breakpoints={{
                 768: {
                 slidesPerView: 3,
@@ -34,7 +30,6 @@ export default function SpotlightSection({data, className = "", forward = true})
                     <SwiperSlide key={article._id}><Spotlight article={article} forward={forward}></Spotlight></SwiperSlide>
                 ))}
                 </div>
-                <div className="swiper-scrollbar"></div>
             </Swiper>
         </section>
     )

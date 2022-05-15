@@ -54,8 +54,14 @@
 }
 
 .sidenav a {
-    width: 60%;
-    height: 2rem;
+    width: 100%;
+    margin: 0 !important;
+}
+
+#sidebar > .react-ripples {
+    width: 218px !important;
+    margin: 0 !important;
+    margin-bottom: .75rem !important;
 }
 
 .sidenav > span {
@@ -76,7 +82,7 @@
 
 .sidenav .disabled {
     color: white;
-    background-color: rgba(0, 0, 0, 0.037);
+    background-color: rgba(0, 0, 0, 0.057);
 }
 
 #navbarOpener {

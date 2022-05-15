@@ -64,20 +64,20 @@ export default function Navbar() {
                 <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer" />
             </div>
             <div id="sidebar" className="sidenav">
-                <span onClick={closeNav}>
-                    <FaTimesCircle className="fa-solid fa-times-circle pointer" />
+                <span style={{cursor: "default"}}>
+                    <FaTimesCircle onClick={closeNav} className="fa-solid fa-times-circle pointer" />
                 </span>
 
-                <SearchBarComp />
+                <SearchBarComp closenav={closeNav} />
 
                 {items.map(item => {
                     if(item === "Home") {
                         return(
-                            <NavbarItem key={item} item={item} href="/" name={item} disabled={!getActive(item)} />
+                            <NavbarItem onclick={closeNav} key={item} item={item} href="/" name={item} disabled={!getActive(item)} />
                         )
                     } else {
                         return (
-                            <NavbarItem key={item} item={item} href={`/category/${item}`} name={item} disabled={!getActive(item)} />
+                            <NavbarItem onclick={closeNav} key={item} item={item} href={`/category/${item}`} name={item} disabled={!getActive(item)} />
                         )
                     }
                 })}

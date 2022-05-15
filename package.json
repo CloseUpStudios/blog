@@ -20,6 +20,7 @@
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1",
     "react-markdown": "^8.0.3",
+    "react-ripples": "^2.2.1",
     "react-search-field": "^2.0.1",
     "react-spinners": "^0.11.0",
     "react-syntax-highlighter": "^15.5.0",
