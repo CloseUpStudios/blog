@@ -103,16 +103,36 @@ h1 {
     color: white;
 }
 
-input {
+input, .searchComp {
     outline: none;
     border: solid 2px #13081e;
     background-color: #13081e;
-    color: white;
-    font-family: "Roboto Flex", sans-serif;
+    color: white !important;
+    font-family: "Roboto Flex", sans-serif !important;
     font-size: 14pt;
+    font-weight: 300 !important;
     border-radius: 6px;
     padding: .35rem .5rem;
     transition: all .25s;
+}
+
+#searchComp > div {
+    outline: none !important;
+    border: none !important;
+}
+
+#searchComp .react-search-field-button {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 6px;
+    padding-left: .25rem;
+    transition: all .15s;
+    color: white !important;
+}
+
+#searchComp .react-search-field-button:hover {
+    background-color: rgb(220, 220, 220) !important;
+    color: black !important;
 }
 
 input:focus-visible {

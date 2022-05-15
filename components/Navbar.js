@@ -1,11 +1,13 @@
 import NavbarItem from './NavbarItem'
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import Link from "next/link";
+import SearchBarComp from "./SearchBarComp";
+import { useState, useCallback } from "react";
 
 export default function Navbar() {
 
+   
     function sleep(ms) {
-    
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     async function openNav() {
@@ -21,7 +23,7 @@ export default function Navbar() {
             document.getElementById("colorOverlay").style.backdropFilter = "blur(1px)";
             document.getElementById("colorOverlay").style.opacity = "1";
         }
-      }
+    }
       
     async function closeNav() {
         if(typeof window === "object") {
@@ -65,6 +67,8 @@ export default function Navbar() {
                 <span onClick={closeNav}>
                     <FaTimesCircle className="fa-solid fa-times-circle pointer" />
                 </span>
+
+                <SearchBarComp />
 
                 {items.map(item => {
                     if(item === "Home") {

@@ -67,6 +67,7 @@ export const getServerSideProps = async (context) => {
     // get data from sanity
     const searchStr = `*[_type == "post" && slug.current == "${slug}"]{
       ...,
+      category->,
       author->
     }`
     article = await client.fetch(searchStr) 
@@ -75,6 +76,7 @@ export const getServerSideProps = async (context) => {
     // get all
     data = await client.fetch(`*[_type == "post"]{
       ...,
+      category->,
       author->
     }`) 
   } else {

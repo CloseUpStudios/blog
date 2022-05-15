@@ -15,8 +15,6 @@ const saveDataInLocalStorage = (data) => {
     }
 }
 
-
-
 const CategoryView = ({ data, category }) => {
 
     // return backgroundImage component with random article from data
@@ -86,6 +84,7 @@ export const getServerSideProps = async (context) => {
         ...,
         "posts": *[_type=="post" && category._ref == ^._id] {
           ...,
+          category->,
           author->
         }
     }`

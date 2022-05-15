@@ -30,7 +30,7 @@
 }
 
 .spotlightTitle {
-    font-size: 26pt;
+    font-size: 20px !important;
     word-wrap: break-word;
 }
 
@@ -104,21 +104,28 @@
     flex-direction: row;
     width: 100%;
     align-content: center;
+    gap: 10px;
     text-decoration: none !important;
+    margin-bottom: .25rem;
 }
 
 .tag {
     padding: .1rem .25rem;
     width: fit-content;
     height: fit-content;
-    color: var(--material_dark);
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: .5em;
     border-radius: 3px;
     text-decoration: none !important;
+
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    background: transparent;
+    border: solid 1px white;
+    color: white !important;
+
+    cursor: pointer;
 }
 
 .tag:first-child {
@@ -156,11 +163,27 @@
         height: 12rem;
     }
     .articleCard {
-        width: 13rem !important;
+        width: 20rem !important;
         height: 15rem;
     }
     .tag {
         font-size: 12px;
+    }
+    .articleCard > div:first-child {
+        height: 75%;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .articleCard {
+        width: 13rem !important;
+    }
+    .articleCardTitle {
+        font-size: 18px;
+    }
+    .subtitle {
+        -webkit-line-clamp: 2;
     }
 }
 

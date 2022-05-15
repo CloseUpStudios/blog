@@ -9,6 +9,7 @@ import '../styles/sidenavStyle.css'
 import '../styles/fonts.css'
 import '../styles/textStyles.css'
 import "../styles/global.css"
+import "../styles/searchStyle.css"
 
 import Footer from "../components/Footer";
 import ScrollToTopArrow from '../components/ScrollToTopArrow';

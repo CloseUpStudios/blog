@@ -20,8 +20,8 @@ function Home({ data}) {
       <main>
         <div id="content_wrapper">
           <Title article={data[0]} />
-          <CardSection data={data}></CardSection>
           <SpotlightSection data={data}></SpotlightSection>
+          <CardSection data={data}></CardSection>
         </div>
       </main>
     </div>
@@ -33,6 +33,7 @@ function Home({ data}) {
 export async function getStaticProps() {
   const data = await client.fetch(`*[_type == "post"]{
     ...,
+    category->,
     author->
   }`) 
 

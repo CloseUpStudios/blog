@@ -96,6 +96,7 @@ export const getServerSideProps = async (context) => {
       _id,      
       "posts": *[_type == "post" && author._ref == ^._id] {
         ...,
+        category->,
         author->
       }
     }`

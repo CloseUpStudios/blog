@@ -1,0 +1,32 @@
+#searchTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchTitle h1 {
+    font-size: 2.5em;
+    color: #fff;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 700;
+}
+
+#searchView #searchWrapper {
+    justify-content: center !important;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#searchView .searchComp {
+    padding: .75rem 1rem;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.347);
+    width: 75%;
+}
+
+.searchViewWrapper {
+    margin: 1rem;
+}
+
+#searchView #latest_articles {
+    gap: 1rem !important;
+}
