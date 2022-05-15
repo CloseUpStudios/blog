@@ -24,10 +24,6 @@
     width: 75%;
 }
 
-.searchViewWrapper {
-    margin: 1rem;
-}
-
 #searchView #latest_articles {
     gap: 1rem !important;
 }
