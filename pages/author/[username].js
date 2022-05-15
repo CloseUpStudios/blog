@@ -5,7 +5,7 @@ import userStyle from '../../styles/userView.module.css';
 import CardSection from "../../components/sections/CardSection";
 import Markdown from '../../components/Markdown';
 import Link from "next/link";
-import { FaInstagram, FaTwitter, FaLinkedinIn, FaArrowDown } from "react-icons/fa";
+import { FaInstagramSquare, FaTwitterSquare, FaLinkedin, FaArrowDown, FaExternalLinkSquareAlt } from "react-icons/fa";
 
 
 const ArticleView = ({ user }) => {
@@ -27,14 +27,19 @@ const ArticleView = ({ user }) => {
               <div className={userStyle.introduction}>{user.introduction}</div>
               <div className={userStyle.socials}>
 
-
-
+              {user.hasOwnProperty("socials") ? (
+                user.socials.hasOwnProperty("website") ? (
+                  <a href={user.socials.website} target={"_blank"} rel={"noopener noreferrer"}>
+                    <FaExternalLinkSquareAlt className={userStyle.socialIcon} />
+                  </a>
+                ) : null
+              ) : null}
 
 
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("instagram") ? (
                   <a href={user.socials.instagram} target={"_blank"} rel={"noopener noreferrer"}>
-                    <FaInstagram className={userStyle.socialIcon} />
+                    <FaInstagramSquare className={userStyle.socialIcon} />
                   </a>
                 ) : null
               ) : null}
@@ -42,7 +47,7 @@ const ArticleView = ({ user }) => {
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("twitter") ? (
                   <a href={user.socials.twitter} target={"_blank"} rel={"noopener noreferrer"}>
-                    <FaTwitter className={userStyle.socialIcon} />
+                    <FaTwitterSquare className={userStyle.socialIcon} />
                   </a>
                 ) : null
               ) : null}
@@ -50,7 +55,7 @@ const ArticleView = ({ user }) => {
               {user.hasOwnProperty("socials") ? (
                 user.socials.hasOwnProperty("linkedin") ? (
                   <a href={user.socials.linkedin} target={"_blank"} rel={"noopener noreferrer"}>
-                    <FaLinkedinIn className={userStyle.socialIcon} />
+                    <FaLinkedin className={userStyle.socialIcon} />
                   </a>
                 ) : null
               ) : null}
