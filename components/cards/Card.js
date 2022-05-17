@@ -28,7 +28,7 @@ export default function Card({article}) {
     ) : (
         <>
         <div>
-            <span className="spotlightTitle articleCardTitle roboto roboto-bold">{article.title}</span>
+            <span className="spotlightTitle articleCardTitle vollkorn">{article.title}</span>
             <Tags tags={article.tags} full={false} />
             <div className="subtitle roboto roboto-light">{article.subtitle}</div>
         </div>
@@ -40,11 +40,9 @@ export default function Card({article}) {
 
     return (
         <Link href={`/post/${article.slug.current}?forward=true`} passHref>
-            <a>
-                <BackgroundImage onclick={() => setLoading(true)} className="spotlightSlide articleCard" image={article.mainImage} spotlight={true} slug={article.slug.current} >
-                    {renderContent}
-                </BackgroundImage>
-            </a>
+            <BackgroundImage onclick={() => setLoading(true)} className="spotlightSlide articleCard" image={article.mainImage} spotlight={true} slug={article.slug.current} >
+                {renderContent}
+            </BackgroundImage>
         </Link>
     )
 }

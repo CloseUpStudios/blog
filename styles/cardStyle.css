@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem 1rem;
-    width: 30rem !important;
-    height: 20rem;
+    width: 30rem;
+    height: 15rem;
     color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     border-radius: 22px;
@@ -22,7 +22,6 @@
     width: 13rem !important;
 }
 
-
 .spotlightSlide:hover {
     transform-origin: center;
     transform: rotateX(-7deg) translateY(-2px);
@@ -30,23 +29,33 @@
 }
 
 .spotlightTitle {
-    font-size: 20px !important;
+    font-size: 26px;
     word-wrap: break-word;
+    color: var(--lightestOrange);
 }
 
-@media screen and (max-width: 786px) {
-    .spotlightTitle {
-        font-size: 18pt;
-    }
+.articleCard .spotlightTitle {
+    font-size: 20px;
+    word-wrap: break-word;
+    color: var(--lightestOrange);
+}
+
+.articleCard .spotlightTitle {
+    font-size: 20px !important;
+}
+
+.spotlightSlide .spotlightMeta {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .spotlightMeta {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
     height: fit-content;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .spotlightDate {
@@ -82,15 +91,23 @@
 }
 
 .spotlightAuthorName {
-    font-size: 14pt;
+    font-size: 14px;
     text-decoration: underline;
+    flex-direction: row !important;
 }
 
 .articleCard {
-    height: 20rem;
-    width: 15rem;
+    height: 9rem;
+    width: 35%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 5px;
+    padding: 1rem;
+}
+
+.articleCard > div:first-child {
+    width: 100%;
 }
 
 .articleCardTitle {
@@ -134,12 +151,13 @@
 
 .subtitle {
     display: -webkit-box !important;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre-line;
     font-size: 13pt;
+    color: #B6B6B6;
 }
 
 .metaStuff {
@@ -162,28 +180,20 @@
         width: 9rem !important;
         height: 12rem;
     }
-    .articleCard {
-        width: 20rem !important;
-        height: 15rem;
-    }
     .tag {
         font-size: 12px;
     }
-    .articleCard > div:first-child {
-        height: 75%;
-        overflow: hidden;
+    .spotlightTitle {
+        font-size: 18px;
+    }
+    .articleCard {
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 376px) {
     .articleCard {
-        width: 13rem !important;
-    }
-    .articleCardTitle {
-        font-size: 18px;
-    }
-    .subtitle {
-        -webkit-line-clamp: 2;
+        width: 100%;
     }
 }
 
@@ -191,13 +201,6 @@
     #spotlight .spotlightSlide {
         width: 9rem !important;
         height: 12rem;
-    }
-    .articleCard {
-        width: 9rem !important;
-        height: 11rem;
-    }
-    .articleCard .spotlightTitle {
-        font-size: 18px !important;
     }
     .tag {
         font-size: 12px;

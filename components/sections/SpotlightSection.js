@@ -12,7 +12,7 @@ export default function SpotlightSection({data, className = "", forward = true})
                 direction="horizontal"
                 loop={true}
                 slidesPerView={3}
-                spaceBetween={250}
+                spaceBetween={35}
                 className="swiper"
                 breakpoints={{
                 768: {
