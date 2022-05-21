@@ -30,11 +30,11 @@ export default function CardSection({ data, overwrite="Latest" }) {
         setArticles(JSON.parse(localStorage.getItem("data")))
     }, []);
 
-    const renderedArticles = articles.map(article => {
+    const renderedArticles = articles.length > 0 ? articles.map(article => {
         return (
             <Card key={article._id} article={article} />
         )
-    })
+    }) : <p>No results found</p>
 
     return (
         <div id="latest" >
