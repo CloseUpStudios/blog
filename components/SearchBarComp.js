@@ -54,8 +54,8 @@ const SearchBarComp = ({ closenav, setIsActive, setData }) => {
     }
 
     return (
-        <div id="searchWrapper">
-            <div id="searchComp">
+        <div id="searchWrapper" className="searchWrapper">
+            <div id="searchComp" className="searchComp">
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <input 
                         type="search"

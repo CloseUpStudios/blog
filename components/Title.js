@@ -7,7 +7,7 @@ const Title = ({article}) => {
         <BackgroundImage userImg={true} className="featuredBG " image={article.mainImage} spotlight={false} slug={article.slug.current} postLink={false} />
         <div className='featuredMeta'>
           <div>
-            <p style={{ margin:"0" }} >Welcome to</p>
+            <p style={{ margin:"0", fontStyle:"italic" }} >Welcome to</p>
               <h1>Closed[in]</h1>
             <p>The Blog brought to you by Close-up Studios!</p>
           </div>

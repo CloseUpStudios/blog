@@ -88,6 +88,7 @@ h3 {
     color: #dec3ff;
     padding: .5rem;
     border-radius: 3px;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -98,6 +99,10 @@ h2 {
     font-weight: 700;
     font-size: 1.5em;
     margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
 }
 
 #articleView h2 {
@@ -122,7 +127,12 @@ input:focus-visible {
     border: solid 2px #13081e !important
 }
 
-input, .searchComp {
+#section_header .searchComp {
+    background-color: #13081e;
+    border-radius: 4px;
+}
+
+.searchComp input {
     outline: none;
     border: solid 2px #13081e;
     background-color: #13081e;
@@ -135,14 +145,14 @@ input, .searchComp {
     transition: all .25s;
 }
 
-#sidebar #searchComp input {
+.searchComp input {
     font-size: 14px !important;
     padding: .75rem .75rem;
     width: 100%;
     border-radius: 4px 0 0 4px;
 }
 
-#sidebar form {
+.searchWrapper form {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -164,11 +174,11 @@ input, .searchComp {
     margin: 0 !important;
 }
 
-#sidebar .react-ripples {
+.searchWrapper .react-ripples {
     width: 100%;
 }
 
-#sidebar form .react-ripples {
+.searchWrapper form .react-ripples {
     width: 30% !important;
 }
 
@@ -181,12 +191,12 @@ input, .searchComp {
     color: #f8cd86 !important;
 }
 
-#searchComp > div {
+.searchComp > div {
     outline: none !important;
     border: none !important;
 }
 
-#searchComp .react-search-field-button {
+.searchComp .react-search-field-button {
     background-color: transparent !important;
     border: none !important;
     border-radius: 6px;
@@ -195,7 +205,7 @@ input, .searchComp {
     color: white !important;
 }
 
-#searchComp .react-search-field-button:hover {
+.searchComp .react-search-field-button:hover {
     background-color: rgb(220, 220, 220) !important;
     color: black !important;
 }

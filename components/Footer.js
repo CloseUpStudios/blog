@@ -17,7 +17,6 @@ export default function Footer({ }) {
                     <h3>Sitemap</h3>
                     <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
                     <Link href={`/category/IT`} ><a className={footerStyle.link}>IT</a></Link>
-                    <Link href={`/category/Film`} ><a className={footerStyle.link}>Film</a></Link>
                     <Link href={`/category/Math`} ><a className={footerStyle.link}>Math</a></Link>
                 </div>
                

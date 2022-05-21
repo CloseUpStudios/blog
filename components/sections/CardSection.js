@@ -1,5 +1,6 @@
 import Card from "../cards/Card"
 import SearchBar from "../SearchBar.js"
+import SectionHeaderWithSearch from "../SectionHeaderWithSearch";
 import { useState, useCallback } from "react";
 
 export default function CardSection({ data, overwrite="Latest" }) {
@@ -38,9 +39,8 @@ export default function CardSection({ data, overwrite="Latest" }) {
     return (
         <div id="latest" >
         {saveDataInLocalStorage(data)}
-            <div >
-                <h2 className="smallHeader lightestOrange">{overwrite}</h2>
-                <SearchBar onSearchSubmit={onSearchSubmit} clearResults={clearResults} />
+            <div>
+                <SectionHeaderWithSearch title={overwrite} withSearch={true} onSearchSubmit={onSearchSubmit} clearResults={clearResults} />
             </div>
             <div id="latest_articles">
                 {renderedArticles}

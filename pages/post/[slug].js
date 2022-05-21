@@ -21,7 +21,7 @@ const ArticleView = ({ article, data }) => {
   try {
     return (
       <div id="articleView">
-          <Header title={article.title} />
+          <Header title={`${article.title} | Closed[in]`} />
           <div id='content_wrapper' style={{marginTop:0}}> 
             <BackgroundImage image={article.mainImage} slug={article.slug.current} spotlight={false} postLink={false} />  
             <div className={articleStyle.articleWrapper}>

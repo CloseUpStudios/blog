@@ -114,7 +114,6 @@
 
 #searchOverlay {
     width: 87%;
-    height: 100%;
     background-color: black;
     z-index: 24;
     display: none;

@@ -83,11 +83,12 @@ header h1 {
 }
 
 .smallHeader {
-    font-size: 22pt;
+    font-size: 1rem;
     color: var(--lightestOrange);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 100;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 300;
     background-color: transparent;
+    margin: .5rem 0 !important;
 }
 
 #latest .smallHeader {
@@ -185,6 +186,7 @@ header h1 {
 
 .featuredMeta div p {
     margin: 1rem;
+    margin-top: 0;
     margin-left: 0;
 }
 
@@ -315,17 +317,15 @@ header h1 {
 
 #latest > div {
     display: flex;
-    width: 100%; 
-    flex-direction: row; 
+    width: 100%;
+    flex-direction: row;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     overflow: visible;
-    align-items: center; 
-    justify-content:space-between; 
-    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
     margin-top: 2rem;
 }
-
 
 #latest > div svg {
     cursor: pointer;
@@ -335,13 +335,6 @@ header h1 {
 
 #latest > div svg:hover {
     color: white;
-}
-
-
-@media screen and (max-width: 320px) {
-    #latest > div {
-        justify-content: flex-start;
-    }
 }
 
 #latest_articles {
@@ -407,11 +400,9 @@ header h1 {
     width: 280px !important;
 }
 
-#latest #searchWrapper input {
-    padding: 1rem .5rem 1rem .5rem !important;
-    background-color: black !important;
-    font-size: 16px !important;
-    border: solid 2px transparent !important;
+
+#latest .searchWrapper {
+    height: 100% !important;
 }
 
 #searchComp {

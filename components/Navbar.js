@@ -52,7 +52,7 @@ export default function Navbar() {
             return active === item;
         }
     }
-    const items = ["Home", "IT", "Film", "Math"];
+    const items = ["Home", "IT", "Math"];
 
     return (
         <>

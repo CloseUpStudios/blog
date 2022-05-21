@@ -11,19 +11,26 @@
     font-weight: 700;
 }
 
-#searchView #searchWrapper {
-    justify-content: center !important;
-    align-items: center;
-    margin-bottom: 3rem;
-    width: 100%;
-}
-
-#searchView .searchComp {
-    padding: 1rem .35rem 1rem .5rem !important;
-    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.347);
-    width: 75%;
-}
-
 #searchView #latest_articles {
     gap: 1rem !important;
+}
+
+.searchViewWrapper  {
+    margin-bottom: 1.5rem;
+    width: 100% !important;
+}
+
+.searchViewWrapper  form {
+    justify-content: center !important;
+}
+
+.searchViewWrapper input {
+    height: 3rem !important;
+    border-radius: 3px !important;
+    width: 70%;
+    border: solid 1px #13081e;
+}
+
+.searchViewWrapper input:focus-visible {
+    border-color: var(--lightestOrange);
 }

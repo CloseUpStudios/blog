@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Ripples from "react-ripples";
+import { FaSearch } from "react-icons/fa";
 
 const SearchBar  = ({ onSearchSubmit, clearResults, initTerm }) => {
     
@@ -19,16 +21,21 @@ const SearchBar  = ({ onSearchSubmit, clearResults, initTerm }) => {
     }, [term, clearResults, onSearchSubmit]);
 
     return (
-        <div id="searchWrapper" className="searchViewWrapper">
-            <input
-                type="text"
-                placeholder="Search by Title, Author, Tags, Category or Subtitle"
-                value={debounceTerm}
-                onChange={e => setDebounceTerm(e.target.value)}
-                className={"searchComp"}
-                autoComplete="off"
-            />
+        <div id="searchWrapper" className="searchViewWrapper searchWrapper">
+            <div id="searchComp" className="searchComp">
+                <form onSubmit={(e) => handleSubmit(e)}>
+                    <input 
+                        type="search"
+                        id="articleSearch" 
+                        placeholder="Search..."
+                        onChange={e => setDebounceTerm(e.target.value)}
+                        value={debounceTerm}
+                        name="q"
+                        autoComplete="off"
+                    />
+                </form>
             </div>
+        </div>
     )
 }
 
