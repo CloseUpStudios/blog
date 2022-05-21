@@ -56,12 +56,12 @@ code {
 }
 
 pre div {
-    background-color: #000000 !important;
+    background-color: black !important;
     border-radius: 3px;
     box-shadow: 0 10px 15px #0000001c;
     cursor: pointer;
+    width: 100%;
 }
-
 
 a {
     color: white;
@@ -85,17 +85,23 @@ h1, h2, h3 {
 
 
 h3 {
-    background-color: #dec3ff;
-    color: #2d1748;
+    color: #dec3ff;
     padding: .5rem;
     border-radius: 3px;
 }
 
 h2 {
-    background-color: #614483;
-    color: #dec0ff;
+    color: white;
     padding: .5rem;
     border-radius: 3px;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+#articleView h2 {
+    position: sticky;
 }
 
 h1 {

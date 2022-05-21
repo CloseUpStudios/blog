@@ -2,10 +2,12 @@ import NavbarItem from './NavbarItem'
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import Link from "next/link";
 import SearchBarComp from "./SearchBarComp";
-import { useState, useCallback } from "react";
+import SearchOverlay from "./SearchOverlay";
+import { useState } from "react";
 
 export default function Navbar() {
-
+    const [isActive, setIsActive] = useState(false);
+    const [data, setData] = useState([]);
    
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -22,9 +24,10 @@ export default function Navbar() {
             
             document.getElementById("colorOverlay").style.backdropFilter = "blur(1px)";
             document.getElementById("colorOverlay").style.opacity = "1";
+
+            document.querySelector("html").style.overflow = "hidden";
         }
     }
-      
     async function closeNav() {
         if(typeof window === "object") {
             document.getElementById("sidebar").style.width = "0";
@@ -34,9 +37,10 @@ export default function Navbar() {
             document.getElementById("colorOverlay").style.opacity = "0";
             await sleep(250);
             document.getElementById("colorOverlay").style.display = "none";
+
+            document.querySelector("html").style.overflow = "auto";
         }
     }
-
     const getActive = (item) => {
         if(typeof window === "object") {
             const path = window.location.pathname;
@@ -48,19 +52,17 @@ export default function Navbar() {
             return active === item;
         }
     }
-
-    const items = ["Home", "IT", "Film", "Cooking", "Math"];
+    const items = ["Home", "IT", "Film", "Math"];
 
     return (
         <>
             <div onClick={closeNav} id="colorOverlay"></div>
             <div className='navbar'>
-            <Link href="/">
-                <a>
-                    <h1 className='rubik-mono-one'>Closed[in]</h1>
-                </a>
-            </Link>
-                
+                <Link href="/">
+                    <a>
+                        <h1 className='rubik-mono-one'>Closed[in]</h1>
+                    </a>
+                </Link>
                 <FaBars id="navbarOpener" onClick={openNav} className="fas fa-bars pointer" />
             </div>
             <div id="sidebar" className="sidenav">
@@ -68,7 +70,8 @@ export default function Navbar() {
                     <FaTimesCircle onClick={closeNav} className="fa-solid fa-times-circle pointer" />
                 </span>
 
-                <SearchBarComp closenav={closeNav} />
+                <SearchBarComp closenav={closeNav} setIsActive={setIsActive} setData={setData} />
+                <SearchOverlay closeNav={closeNav} isActive={isActive} data={data} />
 
                 {items.map(item => {
                     if(item === "Home") {

@@ -8,13 +8,13 @@
     background: rgb(247,171,60);
     background: linear-gradient(180deg, #763bb1 0%, #4e178b 100%);
     box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.196);
-    overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -70,6 +70,7 @@
     font-size: 23pt;
     cursor: pointer;
     transition: transform .1s;
+    z-index: 28;
 }
 
 .sidenav span svg {
@@ -99,4 +100,47 @@
 #navbarOpener:hover {
     color: white;
     transform: skew(-5deg, -5deg);
+}
+
+#searchWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:  center;
+    flex-wrap: wrap;
+    height: 60px;
+    width: 218px;
+    z-index: 25 !important;
+}
+
+#searchOverlay {
+    width: 87%;
+    height: 100%;
+    background-color: black;
+    z-index: 24;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    padding-top: 12rem;
+}
+
+.searchOverlayActive {
+    display: flex !important;
+}
+
+#searchOverlay div {
+    margin-top: 0 !important;
+}
+
+#searchOverlay {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+#searchOverlay h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: break-spaces;
 }

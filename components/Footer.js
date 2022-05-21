@@ -18,7 +18,6 @@ export default function Footer({ }) {
                     <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
                     <Link href={`/category/IT`} ><a className={footerStyle.link}>IT</a></Link>
                     <Link href={`/category/Film`} ><a className={footerStyle.link}>Film</a></Link>
-                    <Link href={`/category/Cooking`} ><a className={footerStyle.link}>Cooking</a></Link>
                     <Link href={`/category/Math`} ><a className={footerStyle.link}>Math</a></Link>
                 </div>
                

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Ripples from "react-ripples";
 
-const SearchBarComp = ({ closenav }) => {
+const SearchBarComp = ({ closenav, setIsActive, setData }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchClasses, setSearchClasses] = useState("btn searchButton");
 
@@ -12,8 +12,8 @@ const SearchBarComp = ({ closenav }) => {
         event.preventDefault();
         console.log(searchTerm);
         if(searchTerm.length > 0) {
-            closenav();
             window.location.href = "/search/" + searchTerm;
+            closenav();
         } else {
             toast.error('Please enter a search value before trying to search.', {
                 position: "top-center",
@@ -28,9 +28,29 @@ const SearchBarComp = ({ closenav }) => {
         }
     }
 
+    // highlights search button when search term is entered
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
-        e.target.value.length != 0 ? setSearchClasses("btn searchButton searchActive") : setSearchClasses("btn searchButton")
+        const term = e.target.value;
+
+        term.length > 0 ? setIsActive(true) : setIsActive(false);
+
+        term.length != 0 ? setSearchClasses("btn searchButton searchActive") : setSearchClasses("btn searchButton")
+        
+        if(term.length > 0) {
+            const data = JSON.parse(localStorage.getItem('data'));
+            const results = data.filter(article => 
+            article.title.toLowerCase().includes(term.toLowerCase()) 
+            || article.subtitle.toLowerCase().includes(term.toLowerCase())
+            || article.author.name.toLowerCase().includes(term.toLowerCase())
+            || article.tags.join("").toLowerCase().includes(term.toLowerCase())
+            || article.category.title.toLowerCase().includes(term.toLowerCase()));
+    
+            setData(results);
+        } else {
+            // setData to all articles
+            setData(JSON.parse(localStorage.getItem("data")));
+        }
     }
 
     return (

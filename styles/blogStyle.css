@@ -403,15 +403,6 @@ header h1 {
     transform: scaleX(100%);
 }
 
-#searchWrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items:  center;
-    flex-wrap: wrap;
-    height: 60px;
-    width: 218px;
-}
-
 #latest #searchWrapper {
     width: 280px !important;
 }

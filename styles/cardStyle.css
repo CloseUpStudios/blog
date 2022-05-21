@@ -141,8 +141,6 @@
     background: transparent;
     border: solid 1px white;
     color: white !important;
-
-    cursor: pointer;
 }
 
 .tag:first-child {

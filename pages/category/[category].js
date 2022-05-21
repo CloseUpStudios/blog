@@ -6,6 +6,7 @@ import articleStyle from '../../styles/articleView.module.css';
 import Meta from '../../components/cards/Meta';
 import Tags from '../../components/cards/Tags';
 import Link from "next/link";
+import SpinnerButton from "../../components/SpinnerButton";
 
 const saveDataInLocalStorage = (data) => {
     if(typeof window !== 'undefined') {
@@ -30,7 +31,7 @@ const CategoryView = ({ data, category }) => {
                 <p>{article.subtitle}</p>
                 <Link href={`/post/${article.slug.current}`} >
                 <a>
-                    <button className="btn btn_secondary">Read More</button>
+                    <SpinnerButton text="Read more" />
                 </a>
                 </Link>
             </div>

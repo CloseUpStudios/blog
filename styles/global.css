@@ -16,11 +16,17 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: .5rem;
+    width: .35rem;
     height: .5rem;
-    background-color: #614483;
+    background-color: #1c1226 !important;
     border-radius: 3px;
 }
+
+
+::-webkit-scrollbar {
+    background-color: #3e2659;
+}
+
 
 body::-webkit-scrollbar {
     border-radius: 0;
@@ -28,6 +34,10 @@ body::-webkit-scrollbar {
  
  
 ::-webkit-scrollbar-thumb {
-    background-color: #9c82b8;
+    background-color: #654886;
     border-radius: 3px;
+}
+
+#articleView ::-webkit-scrollbar {
+    background-color: #3e2659;
 }
