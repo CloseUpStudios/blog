@@ -1,32 +1,8 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")
+const withPWA = require("next-pwa");
+const { createSecureHeaders } = require("next-secure-headers");
 
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self';
-  child-src close-up-blog.vercel.app;
-  style-src 'self' close-up-blog.vercel.app;
-  font-src 'self';  
-  `
-
-const securityHeaders = [
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
-  },
-  {
-    key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
-  }
-]
+const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = withPWA({
   pwa: {
@@ -37,11 +13,6 @@ module.exports = withPWA({
     domains: ["cdn.sanity.io"],
   },
   async headers() {
-    return [
-      {
-        source: ":/path*",
-        headers: securityHeaders,
-      }
-    ]
-  }
+    return [{ source: "/:path", headers: createSecureHeaders() }];
+  },
 })

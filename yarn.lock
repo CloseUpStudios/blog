@@ -3620,6 +3620,11 @@
     "@sanity/groq-store" "^0.3.1"
     "groq" "^2.29.3"
 
+"next-secure-headers@^2.2.0":
+  "integrity" "sha512-C7OfZ9JdSJyYMz2ZBMI/WwNbt0qNjlFWX9afUp8nEUzbz6ez3JbeopdyxSZJZJAzVLIAfyk6n73rFpd4e22jRg=="
+  "resolved" "https://registry.npmjs.org/next-secure-headers/-/next-secure-headers-2.2.0.tgz"
+  "version" "2.2.0"
+
 "next@12.1.5":
   "integrity" "sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.5.tgz"

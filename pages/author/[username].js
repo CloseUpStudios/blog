@@ -1,16 +1,13 @@
 import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import BackgroundImage from '../../components/cards/BackgroundImage';
 import userStyle from '../../styles/userView.module.css';
 import CardSection from "../../components/sections/CardSection";
 import Markdown from '../../components/Markdown';
-import Link from "next/link";
 import { FaInstagramSquare, FaTwitterSquare, FaLinkedin, FaArrowDown, FaExternalLinkSquareAlt } from "react-icons/fa";
 
 
 const ArticleView = ({ user }) => {
   try {
-
     const scrollDown = () => {
       window.scrollBy({behavior:"smooth", top: 500});
     }
