@@ -3,14 +3,14 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
     render() {
         return(
-            <Html>
+            <Html lang="en">
                 <Head>
 
                     <meta name='application-name' content='Closed[in] Blog' />
                     <meta name='apple-mobile-web-app-capable' content='yes' />
                     <meta name='apple-mobile-web-app-status-bar-style' content='default' />
                     <meta name='apple-mobile-web-app-title' content='Closed[in] Blog' />
-                    <meta name='description' content='Tech and Maths Blog ' />
+                    <meta name='description' content='Tech and Maths Blog' />
                     <meta name='format-detection' content='telephone=no' />
                     <meta name='mobile-web-app-capable' content='yes' />
                     <meta name='msapplication-config' content='/icons/browserconfig.xml' />
@@ -41,11 +41,6 @@ class MyDocument extends Document {
                     <meta property='og:site_name' content='Closed[in] Blog' />
                     <meta property='og:url' content='https://close-up-blog.vercel.app' />
                     <meta property='og:image' content='https://close-up-blog.vercel.app/icons/apple-touch-icon.png' />
-
-
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-                    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Flex:opsz@8..144&family=Rubik+Mono+One&family=Vollkorn&display=swap" rel="stylesheet"></link>
                 </Head>
                 <body>
                     <Main />

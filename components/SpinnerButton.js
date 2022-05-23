@@ -15,7 +15,7 @@ export default function SpinnerButton({ text }) {
         if(loading) {
             setTimeout(() => {
                 setLoading(false);
-            }, 1000);
+            }, 2000);
         }
     }, [loading]);
 
@@ -38,7 +38,9 @@ export default function SpinnerButton({ text }) {
     <>
     <button 
         onClick={() => setLoading(true)}
-        className="btn btn_small">
+        className="btn btn_small"
+        aria-label={`${text} Button`}
+        >
         {renderButton}
     </button>
     </>

@@ -9,13 +9,12 @@
     color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     border-radius: 22px;
-    background-image: linear-gradient( #000000ce, 100%, rgba(0, 0, 0, 1.249)),
-    url('https://images.unsplash.com/photo-1648765825798-57d76ecd38e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
     transition: all .5s;
     cursor: pointer;
+    overflow: hidden;
+    transform-origin: center;
+    transform: translateY(0px);
+    user-select: none;
 }
 
 #spotlight .spotlightSlide {
@@ -25,7 +24,30 @@
 .spotlightSlide:hover {
     transform-origin: center;
     transform: rotateX(-7deg) translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.422);
+}
+
+/* set index back, so doesn't occlude interactables */
+.spotlightSlide > span {
+    z-index: -10;
+}
+
+.articleCard > span img, .spotlightSlide > span img {
+    min-width: unset !important;
+    min-height: unset !important;
+    max-width: unset !important;
+    max-height: unset !important;
+}
+
+.spotlightSlide > span img {
+    width: auto !important;
+    height: 100% !important;
+
+}
+
+.articleCard > span img {
+    height: auto !important;
+    width: 150% !important;
 }
 
 .spotlightTitle {
@@ -73,6 +95,7 @@
     align-items: center;
     padding: .25rem;
     border-radius: 3px;
+    gap: 5px;
 }
 
 .spotlightAuthor:hover {
@@ -81,13 +104,9 @@
 
 .spotlightAuthorImage {
     margin-right: .5em;
-    background-color: aliceblue;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
     border-radius: 100%;
-    width: 1em;
-    height: 1em;
+    width: 16px !important;
+    height: 16px !important;
 }
 
 .spotlightAuthorName {
@@ -155,7 +174,7 @@
     text-overflow: ellipsis;
     white-space: pre-line;
     font-size: 13pt;
-    color: #B6B6B6;
+    color: #e4e4e4;
 }
 
 .metaStuff {
@@ -192,6 +211,15 @@
 @media screen and (max-width: 376px) {
     .articleCard {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .subtitle {
+        display: none !important;
+    }
+    .featuredMeta .subtitle {
+        display: block !important;
     }
 }
 

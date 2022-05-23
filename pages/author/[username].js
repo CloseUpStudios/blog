@@ -22,7 +22,7 @@ const ArticleView = ({ user }) => {
             <BackgroundImage className={userStyle.bgimage} image={user.bgimage} slug={user.slug.current} forward={false} spotlight={false} userImg={true} postLink={false} />  
             <div className={userStyle.userWrapper}>
             <div className={userStyle.userMeta}>
-              <BackgroundImage className={userStyle.image} image={user.image} slug={user.slug.current} forward={false} spotlight={false} userImg={false} postLink={false} />  
+              <BackgroundImage className={userStyle.image} image={user.image} slug={user.slug.current} forward={false} spotlight={false} userImg={false} postLink={false} authorProfile />  
               <h1>{user.name}</h1>
               <div className={userStyle.introduction}>{user.introduction}</div>
               <div className={userStyle.socials}>

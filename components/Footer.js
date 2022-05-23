@@ -14,14 +14,14 @@ export default function Footer({ }) {
         
             <div className={footerStyle.links}>
                 <div className={footerStyle.subLinks}>
-                    <h3>Sitemap</h3>
+                    <span>Sitemap</span>
                     <Link href={`/`} ><a className={footerStyle.link}>Home</a></Link>
                     <Link href={`/category/IT`} ><a className={footerStyle.link}>IT</a></Link>
                     <Link href={`/category/Math`} ><a className={footerStyle.link}>Math</a></Link>
                 </div>
                
                 <div className={footerStyle.subLinks}>
-                    <h3>Info</h3>
+                    <span>Info</span>
                     <Link href={`/about`} ><a className={footerStyle.link}>About</a></Link>
                     <Link href={`/privacy`} ><a className={footerStyle.link}>Privacy Policy</a></Link>
 

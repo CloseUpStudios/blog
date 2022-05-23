@@ -39,10 +39,12 @@ export default function Card({article}) {
     )
 
     return (
-        <Link href={`/post/${article.slug.current}?forward=true`} passHref>
-            <BackgroundImage onclick={() => setLoading(true)} className="spotlightSlide articleCard" image={article.mainImage} spotlight={true} slug={article.slug.current} >
-                {renderContent}
-            </BackgroundImage>
-        </Link>
+        <BackgroundImage 
+            onclick={() => setLoading(true)} 
+            className="spotlightSlide articleCard" image={article.mainImage} 
+            spotlight={true} slug={article.slug.current} 
+            >
+            {renderContent}
+        </BackgroundImage>
     )
 }

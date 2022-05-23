@@ -14,7 +14,7 @@ export default function Meta({article}) {
             <div className="spotlightDate roboto" style={{fontWeight:"300", fontStyle:"italic"}}>
             {dateString}
             </div>
-            <Link href={`/author/${article.author.slug.current}`}  passHref>
+            <Link href={`/author/${article.author.slug.current}`} passHref>
                 <div className="spotlightAuthor">
                     <UserImage image={article.author.image} username={article.author.name} />
                     <div className="spotlightAuthorName roboto" style={{fontWeight:"300"}}>{article.author.name}</div>
