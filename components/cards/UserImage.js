@@ -5,6 +5,6 @@ export default function UserImage({ image, username }) {
     let imageUrl = GetImageUrl(image);
     
     return (
-        <Image className="spotlightAuthorImage" width="16px" height="16px" src={imageUrl} alt={username}></Image>
+        <Image className="spotlightAuthorImage" layout="fixed" width={16} height={16} src={imageUrl} alt={username}></Image>
     )
 }
