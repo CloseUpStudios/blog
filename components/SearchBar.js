@@ -53,7 +53,7 @@ const SearchBar  = ({ onSearchSubmit, clearResults }) => {
                         autoComplete="off"
                     />
                     <Ripples>
-                        <button className="btn searchButton" type="submit" value="Submit" aria-label="Search Submit Button" > 
+                        <button className="btn searchButton" type="submit" value="Submit" aria-label="Submit Search" > 
                             <FaSearch aria-hidden="true" /> 
                         </button>
                     </Ripples>
