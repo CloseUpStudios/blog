@@ -3,15 +3,6 @@ import CardSection from '../components/sections/CardSection';
 import Header from '../components/Header';
 import Title from "../components/Title";
 
-// sanity stuff
-import { createClient } from 'next-sanity'
-const client = createClient({
-  projectId: "g2ejdxre",
-  dataset: "production",
-  apiVersion: "2022-04-29",
-  useCdn: true
-});
-
 function Home({ data}) {
 
   return (
@@ -29,7 +20,7 @@ function Home({ data}) {
 }
 
 
-
+import client from "../components/SanityClient";
 export async function getStaticProps() {
   const data = await client.fetch(`*[_type == "post"]{
     ...,

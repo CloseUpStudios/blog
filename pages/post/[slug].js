@@ -1,12 +1,10 @@
 import Header from '../../components/Header';
-import Navbar from '../../components/Navbar';
 import BackgroundImage from '../../components/cards/BackgroundImage';
 import SpotlightSection from '../../components/sections/SpotlightSection';
 import articleStyle from '../../styles/articleView.module.css';
 import Meta from '../../components/cards/Meta';
 import Tags from '../../components/cards/Tags';
 import Markdown from "../../components/Markdown";
-import NoSsr from '../../components/NoSsr';
 import FormatDate from "../../components/FormatDate";
 
 const ArticleView = ({ article, data }) => {
@@ -34,7 +32,6 @@ const ArticleView = ({ article, data }) => {
             <div className={articleStyle.articleWrapper}>
               <Meta article={article} />
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
-              
               <Tags tags={article.tags} full={true} />
               {article.hasEdits ? renderEdits : null}
               <div className={`${articleStyle.subtitle} roboto `} style={{fontStyle:"italic"}}>{article.subtitle}</div>
@@ -54,19 +51,8 @@ const ArticleView = ({ article, data }) => {
 
 }
 
-// sanity stuff
-import { createClient } from 'next-sanity'
-
-const client = createClient({
-  projectId: "g2ejdxre",
-  dataset: "production",
-  apiVersion: "2022-04-29",
-  useCdn: false
-});
-
-
+import client from "../../components/SanityClient";
 export const getServerSideProps = async (context) => {
-
   let data = false, article = false;
 
   // single article for article view

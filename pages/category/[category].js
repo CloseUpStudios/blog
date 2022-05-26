@@ -64,14 +64,7 @@ const CategoryView = ({ data, category }) => {
     }
 }
 
-// sanity stuff
-import { createClient } from 'next-sanity'
-const client = createClient({
-  projectId: "g2ejdxre",
-  dataset: "production",
-  apiVersion: "2022-04-29",
-  useCdn: true
-});
+import client from "../../components/SanityClient";
 
 export const getServerSideProps = async (context) => {
     let data = false;
