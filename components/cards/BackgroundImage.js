@@ -14,7 +14,7 @@ export default function backgroundImage({
 
     if(postLink == "true") {
         return (
-            <Link href={`/post/${slug}?forward=${forward}`} passHref>
+            <Link href={`/post/${slug}`} passHref>
             <div className={className} onClick={onclick} >
                 {children}
                 <Image style={{ zIndex:"-10", filter:"blur(1px) brightness(25%)", userSelect:"none"}} src={imageUrl} alt="article main image" layout="fill" />

@@ -70,7 +70,6 @@ const SearchView = ({ data, term, reqFilteredData }) => {
     }
 }
 
-import client from "../../components/SanityClient";
 const filterArticles = async (term, dataToFilter) => {
     const results = dataToFilter.filter(article => 
     article.title.toLowerCase().includes(term.toLowerCase()) 
@@ -80,7 +79,8 @@ const filterArticles = async (term, dataToFilter) => {
     return results;
 }
 
-export const getServerSideProps = async (context) => {
+import client from "../../components/SanityClient";
+export async function getServerSideProps(context)  {
     const term = context.params.term;
     const data = await client.fetch(`*[_type == "post"]{
       ...,

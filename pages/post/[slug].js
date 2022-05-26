@@ -9,15 +9,6 @@ import FormatDate from "../../components/FormatDate";
 
 const ArticleView = ({ article, data }) => {
   
-  if(!data) {
-    // get from localStorage
-    if(typeof window !== 'undefined') {
-      data = JSON.parse(localStorage.getItem('data'));
-      article = data.find(articleIn => articleIn.slug.current == article);
-
-    }
-  }
-
   const renderEdits = (
     <div className={articleStyle.edits}>
       <span>Last Edited: <FormatDate date={article.publishedAt} withTime={true} /></span>
@@ -51,32 +42,36 @@ const ArticleView = ({ article, data }) => {
 
 }
 
+// TODO change to static site generation and trigger on sanity db change
 import client from "../../components/SanityClient";
-export const getServerSideProps = async (context) => {
+
+export async function getStaticPaths() {
+  // Get all articles and take only slug, then pass this to params
+  let data = await client.fetch(`*[_type == "post"]{
+    ...,
+  }`) 
+
+  const paths = data.map((article) => ({
+    params: { slug: article.slug.current },
+  }))
+
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
   let data = false, article = false;
 
   // single article for article view
-  const slug = context.params.slug;
+  const slug = params.slug;
 
-  if(context.query.forward == undefined || (context.query.forward != "true")) {
-    // get data from sanity
-    const searchStr = `*[_type == "post" && slug.current == "${slug}"]{
-      ...,
-      category->,
-      author->
-    }`
-    article = await client.fetch(searchStr) 
-    article = article[0]
-  
-    // get all
-    data = await client.fetch(`*[_type == "post"]{
-      ...,
-      category->,
-      author->
-    }`) 
-  } else {
-    article = slug;
-  }
+  // get all
+  data = await client.fetch(`*[_type == "post"]{
+    ...,
+    category->,
+    author->
+  }`)
+
+  article = data.find(articleIn => articleIn.slug.current == slug);
 
   return { props: { article, data }};
 }

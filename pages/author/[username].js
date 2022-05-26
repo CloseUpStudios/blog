@@ -81,11 +81,25 @@ const ArticleView = ({ user }) => {
 }
 
 import client from "../../components/SanityClient";
-export const getServerSideProps = async (context) => {
+
+export async function getStaticPaths() {
+  // Get all articles and take only slug, then pass this to params
+  let data = await client.fetch(`*[_type == "author"]{
+    ...,
+  }`) 
+
+  const paths = data.map((author) => ({
+    params: { username: author.slug.current },
+  }))
+
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
   let user = false;
 
   // single article for article view
-  const usernameSlug = context.params.username;
+  const usernameSlug = params.username;
     // get data from sanity
     const searchString = `*[_type == "author" && slug.current == "${usernameSlug}" ] {
       ...,

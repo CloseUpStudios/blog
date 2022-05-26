@@ -66,11 +66,23 @@ const CategoryView = ({ data, category }) => {
 
 import client from "../../components/SanityClient";
 
-export const getServerSideProps = async (context) => {
+export async function getStaticPaths() {
+    let data = await client.fetch(`*[_type == "category"]{
+      ...,
+    }`) 
+  
+    const paths = data.map(category => ({
+      params: { category: category.title },
+    }))
+  
+    return { paths, fallback: false }
+  }
+
+export async function getStaticProps({ params }) {
     let data = false;
 
     // single article for article view
-    let category = context.params.category;
+    let category = params.category;
 
     // get data from sanity
     const searchStr = `*[_type == "category" && title=="${category}"] {
@@ -86,6 +98,7 @@ export const getServerSideProps = async (context) => {
     data = data[0];
     category = data;
     data = data.posts;
+    
   return { props: { data, category }};
 }
 
