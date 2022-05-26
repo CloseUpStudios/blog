@@ -65,8 +65,8 @@ const SearchBarComp = ({ closenav, setIsActive, setData }) => {
                         autoComplete="off"
                     />
                     <Ripples>
-                        <button className={searchClasses} type="submit" value="Submit" > 
-                            <FaSearch /> 
+                        <button className={searchClasses} type="submit" value="Submit" aria-label="Submit Search" > 
+                            <FaSearch aria-hidden="true" /> 
                         </button>
                     </Ripples>
                 </form>
