@@ -2,13 +2,15 @@ import Link from 'next/link';
 import BackgroundImage from './BackgroundImage';
 import Tags from "./Tags";
 import Meta from "./Meta";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";
+import useWindowLocation from '../UseWindowLocation';
 
 export default function Spotlight({article, forward=true}) {
 
     const [loading, setLoading] = useState(false);
+    const [windowLocation, setWindowLocation] = useWindowLocation();
 
     const override = css`
         width: 160px;
@@ -38,7 +40,19 @@ export default function Spotlight({article, forward=true}) {
         </>
     )
 
+    let oldLocation = "";
+    if(typeof window !== "undefined") {
+        oldLocation = window.location.pathname;
+    }
 
+    const handleLocationChange = () => {
+        if(typeof window !== "undefined") {
+            if(windowLocation != window.location.pathname) {
+                setLoading(false);
+                setWindowLocation(oldLocation);
+            }
+        }
+    }
 
     return (
         <BackgroundImage 
@@ -47,6 +61,7 @@ export default function Spotlight({article, forward=true}) {
         onclick={() => setLoading(true)} 
         >
         {renderContent}
+        {handleLocationChange()}
         </BackgroundImage>
     )
 }

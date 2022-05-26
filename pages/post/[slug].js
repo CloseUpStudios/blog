@@ -7,8 +7,10 @@ import Meta from '../../components/cards/Meta';
 import Tags from '../../components/cards/Tags';
 import Markdown from "../../components/Markdown";
 import NoSsr from '../../components/NoSsr';
+import FormatDate from "../../components/FormatDate";
 
 const ArticleView = ({ article, data }) => {
+  
   if(!data) {
     // get from localStorage
     if(typeof window !== 'undefined') {
@@ -16,8 +18,13 @@ const ArticleView = ({ article, data }) => {
       article = data.find(articleIn => articleIn.slug.current == article);
 
     }
-    
   }
+
+  const renderEdits = (
+    <div className={articleStyle.edits}>
+      <span>Last Edited: <FormatDate date={article.publishedAt} withTime={true} /></span>
+    </div>
+  )
   try {
     return (
       <div id="articleView">
@@ -27,7 +34,9 @@ const ArticleView = ({ article, data }) => {
             <div className={articleStyle.articleWrapper}>
               <Meta article={article} />
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
+              
               <Tags tags={article.tags} full={true} />
+              {article.hasEdits ? renderEdits : null}
               <div className={`${articleStyle.subtitle} roboto `} style={{fontStyle:"italic"}}>{article.subtitle}</div>
               <div className={`${articleStyle.content} roboto roboto-light`}>
                 <Markdown childs={article.body} />
@@ -52,7 +61,7 @@ const client = createClient({
   projectId: "g2ejdxre",
   dataset: "production",
   apiVersion: "2022-04-29",
-  useCdn: true
+  useCdn: false
 });
 
 

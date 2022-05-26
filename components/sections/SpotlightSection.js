@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Spotlight from '../cards/SpotlightCard';
 
-export default function SpotlightSection({data, className = "", forward = true}) {
+export default function SpotlightSection({data, className = "", forward = true, loading, setLoading}) {
     return (
         <section className={className} id="spotlight">
             <h2 className="smallHeader" style={{fontSize:"18pt"}}>Spotlight</h2>
