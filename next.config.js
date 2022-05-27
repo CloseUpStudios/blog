@@ -21,6 +21,6 @@ module.exports = withPlugins([
     async headers() {
       return [{ source: "/:path", headers: createSecureHeaders() }];
     },
-    productionBrowserSourceMaps: true,
+    productionBrowserSourceMaps: false,
   }
 ])
