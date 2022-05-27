@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Title from "../components/Title";
 
 function Home({ data}) {
-
   return (
     <div id="root">
       <Header title="Closed[in]" />

@@ -25,7 +25,7 @@ export default function backgroundImage({
         return (
             <div className={className}>
                 {children}
-                <Image src={imageUrl} alt="article main image" layout="fill" className={`${classes}`} />
+                <Image src={imageUrl} alt="article main image" priority layout="fill" className={`${classes}`} />
             </div>
         )
     }

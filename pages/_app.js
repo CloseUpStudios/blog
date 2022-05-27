@@ -13,20 +13,15 @@ import "../styles/searchStyle.css"
 
 import Footer from "../components/Footer";
 import ScrollToTopArrow from '../components/ScrollToTopArrow';
-import Navbar from '../components/Navbar'
-;
-import { useAmp } from "next/amp";
-const config = { amp: "true "}
+import Navbar from '../components/Navbar';
 
 try {
   splitbee.init({disabledCookies:true});
 } catch (e) {
-  console.log(e);
+  console.log("Splitbee not loaded");
 }
 
-
 function MyApp({ Component, pageProps }) {
-  const loadAmp = useAmp();
   return (
     <>
       <NextNProgress color="#F8CD86" />
