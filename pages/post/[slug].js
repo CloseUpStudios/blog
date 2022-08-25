@@ -27,7 +27,7 @@ const ArticleView = ({ article, data }) => {
             justifyContent: "center"
           }}>
             <BackgroundImage articleImage={true} image={article.mainImage} slug={article.slug.current} spotlight={false} postLink={false} />  
-            <div style={{ zIndex: 2 }}>
+            <div lang="en" style={{ zIndex: 2, hyphens: "auto", wordBreak: "break-word", width: "80%" }}>
               <Meta article={article} />
               {article.hasEdits ? renderEdits : null}
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
