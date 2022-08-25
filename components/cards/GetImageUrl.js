@@ -8,5 +8,4 @@ function GetImageUrl( image ) {
     let imageUrl = builder.image(image.asset._ref).url();
     return imageUrl;
 }
-
 export default GetImageUrl;

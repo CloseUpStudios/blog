@@ -1,5 +1,4 @@
 .articleWrapper {
-    margin-top: 10rem;
     padding: 1rem;
     min-width: 85%;
     margin-left: 50%;
@@ -36,9 +35,10 @@
 
 .subtitle {
     padding: 1rem;
-    margin: 0.5rem 0;
+    margin: .5rem 0;
+    margin-bottom: 2.5rem;
     font-size: 16pt;
-    background-color: #12121221;
+    color: rgb(201, 198, 198);
     border-radius: 3px;
 }
 

@@ -1,12 +1,14 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import Header from "../components/Header";
 
 import privacyStyle from "../styles/privacyStyle.module.css";
 
 export default function Privacy() {
     return (
-        <>
-            <div id="content_wrapper" >
+        <div id="root">
+            <Header title="Closed[in]" />
+            <div id="content_wrapper" style={{margin: "2rem", marginTop: "7rem"}} >
                 
                 <h1>Privacy Policy</h1>
 
@@ -40,6 +42,6 @@ export default function Privacy() {
 
                 </div>
              </div>
-        </>
+        </div>
     )
 }
