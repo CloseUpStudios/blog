@@ -368,6 +368,13 @@ header h1 {
     width: 25rem;
     height: 20rem;
     margin: 0;
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    #articleView .article_image {
+        width: 15rem;
+    }
 }
 
 #articleView .article_image span {

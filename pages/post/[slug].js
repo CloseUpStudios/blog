@@ -23,22 +23,20 @@ const ArticleView = ({ article, data }) => {
           <div style={{ 
             display: "flex", flexDirection: "row",
             flexWrap: "wrap", alignItems: "center",
-            gap: 50, margin: "2.5rem", marginTop: "7rem",
-            marginLeft: "50%", transform: "translateX(-50%)",
-            overflow: "visible"
+            gap: 50, marginTop: "7rem", overflow: "visible",
+            justifyContent: "center"
           }}>
             <BackgroundImage articleImage={true} image={article.mainImage} slug={article.slug.current} spotlight={false} postLink={false} />  
-            <div>
+            <div style={{ zIndex: 2 }}>
               <Meta article={article} />
               {article.hasEdits ? renderEdits : null}
               <div className={`${articleStyle.title} vollkorn`}>{article.title}</div>
               <Tags tags={article.tags} full={true} />
             </div>
             <div style={{
-              background: "radial-gradient(circle, rgba(51,32,69, .33) 0%, rgba(30,20,40,0) 50%)",
+              background: "radial-gradient(circle, rgba(51,32,69, .5) 0%, rgba(30,20,40,0) 50%)",
               width: "150vw", height: "150vh",
-              transform: "translateX(-25%)",
-              position: "absolute", zIndex: "-1",
+              position: "absolute",
               overflow: "visible"
               }}></div>
           </div>
