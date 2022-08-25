@@ -34,8 +34,8 @@ const ArticleView = ({ article, data }) => {
               <Tags tags={article.tags} full={true} />
             </div>
             <div style={{
-              background: "radial-gradient(circle, rgba(51,32,69, .5) 0%, rgba(30,20,40,0) 50%)",
-              width: "150vw", height: "150vh",
+              background: "radial-gradient(circle, rgba(51,32,69, .5) 0%, rgba(30,20,40,0) 75%)",
+              width: "99vw", height: "150vh",
               position: "absolute",
               overflow: "visible"
               }}></div>
